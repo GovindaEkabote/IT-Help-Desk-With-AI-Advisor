@@ -1,16 +1,20 @@
 package com.help.desk.auth.controller;
 
 
+import com.help.desk.auth.dto.request.ForgotPasswordRequest;
 import com.help.desk.auth.dto.request.LoginRequest;
 import com.help.desk.auth.dto.request.RefreshTokenRequest;
+import com.help.desk.auth.dto.request.ResetPasswordRequest;
 import com.help.desk.auth.dto.response.AuthResponse;
 import com.help.desk.auth.service.AuthService;
+import com.help.desk.auth.service.EmailService;
 import com.help.desk.exception.ApiError;
 import com.help.desk.exception.ApiResponse;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
 import com.help.desk.user.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +28,8 @@ public class AuthController {
     private final AuthService authService;
     private final UserRepository userRepository;
     private final UserService userService;
+    private final EmailService emailService;
+
 
     @PostMapping("/login")
     public AuthResponse login(@RequestBody LoginRequest request) {
@@ -66,6 +72,39 @@ public class AuthController {
                 .build();
 
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<ApiResponse> forgotPassword(
+            @Valid
+            @RequestBody ForgotPasswordRequest request) {
+        emailService.forgotPassword(request);
+
+        return ResponseEntity.ok(
+                new ApiResponse(
+                        LocalDateTime.now(),
+                        200,
+                        true,
+                        "OTP sent successfully"
+                )
+        );
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<ApiResponse> resetPassword(
+            @Valid
+            @RequestBody ResetPasswordRequest request
+            ){
+        emailService.resetPassword(request);
+
+        return ResponseEntity.ok(
+                new ApiResponse(
+                        LocalDateTime.now(),
+                        200,
+                        true,
+                        "Password reset successfully"
+                )
+        );
     }
 
 }
