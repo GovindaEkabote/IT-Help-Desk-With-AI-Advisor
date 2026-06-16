@@ -7,6 +7,10 @@ import com.help.desk.auth.dto.response.AuthResponse;
 import com.help.desk.auth.service.AuthService;
 import com.help.desk.exception.ApiError;
 import com.help.desk.exception.ApiResponse;
+import com.help.desk.user.dto.response.UserResponse;
+import com.help.desk.user.model.User;
+import com.help.desk.user.repository.UserRepository;
+import com.help.desk.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +22,8 @@ import java.time.LocalDateTime;
 @RequestMapping("/users/auth")
 public class AuthController {
     private final AuthService authService;
+    private final UserRepository userRepository;
+    private final UserService userService;
 
     @PostMapping("/login")
     public AuthResponse login(@RequestBody LoginRequest request) {
@@ -43,6 +49,23 @@ public class AuthController {
                         .message("Logout successful")
                         .build()
         );
+    }
+
+
+    @GetMapping("/current-user")
+    public ResponseEntity<UserResponse> getCurrentUser() {
+
+        User user = authService.getCurrentUser();
+
+        UserResponse response = UserResponse.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .employeeId(user.getEmployeeId())
+                .phone(user.getPhone())
+                .role(user.getRole())
+                .build();
+
+        return ResponseEntity.ok(response);
     }
 
 }
