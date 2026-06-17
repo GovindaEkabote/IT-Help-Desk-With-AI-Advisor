@@ -1,8 +1,10 @@
 package com.help.desk.user.repository;
 
+import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import javax.management.relation.Role;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,5 +34,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     boolean existsByEmployeeIdAndIdNot(String employeeId, Long id);
 
+    List<User> findByRole(UserRole role);
+
+    List<User> findByActive(Boolean active);
 
 }

@@ -5,6 +5,7 @@ import com.help.desk.exception.ResourceNotFoundException;
 import com.help.desk.user.dto.request.CreateUserRequest;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.enums.UserRole;
+import com.help.desk.user.enums.UserStatus;
 import com.help.desk.user.mapper.UserMapper;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse createUser(CreateUserRequest request) {
-        // Map request to User entity
+        // Map request to User entity...
         User user = User.builder()
                 .firstName(request.firstName())
                 .lastName(request.lastName())
@@ -126,5 +127,37 @@ public class UserServiceImpl implements UserService {
         user.setDeleted(true);
         user.setActive(false);
         userRepository.save(user);
+    }
+
+    @Override
+    public List<UserResponse> getUsersByRole(UserRole role) {
+        return userRepository.findByRole(role)
+                .stream()
+                .map(UserMapper::toResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<UserResponse> getUsersByActive(Boolean active) {
+        return userRepository.findByActive(active)
+                .stream()
+                .map(UserMapper::toResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void activeUser(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
+        user.setActive(true);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void deactiveUser(Long id) {
+            User user =  userRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
+            user.setActive(false);
+            userRepository.save(user);
     }
 }

@@ -1,12 +1,15 @@
 package com.help.desk.user.controller;
 
+import com.help.desk.exception.ApiResponse;
 import com.help.desk.user.dto.request.CreateUserRequest;
 import com.help.desk.user.dto.response.UserResponse;
+import com.help.desk.user.enums.UserRole;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import com.help.desk.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,5 +53,33 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/role/{role}")
+    public ResponseEntity<List<UserResponse>> getUsersByRole(
+            @PathVariable UserRole role) {
+        return ResponseEntity.ok(userService.getUsersByRole(role));
+    }
+
+    @GetMapping("/status/{active}")
+    public ResponseEntity<List<UserResponse>> getUsersByStatus(
+            @PathVariable Boolean active) {
+        return ResponseEntity.ok(userService.getUsersByActive(active));
+    }
+
+    @PatchMapping("/{id}/activate")
+    public ResponseEntity<String> activateUser(
+            @PathVariable Long id) {
+        userService.activeUser(id);
+        return ResponseEntity.ok("User activated successfully");
+    }
+
+    @PatchMapping("/{id}/deactivate")
+    public ResponseEntity<String> deactivateUser(
+            @PathVariable Long id) {
+        userService.deactiveUser(id);
+        return ResponseEntity.ok("User deactivated successfully");
+    }
+
 
 }

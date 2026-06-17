@@ -1,6 +1,8 @@
 package com.help.desk.auth.security;
 
 
+import com.help.desk.exception.CustomAccessDeniedHandler;
+import com.help.desk.exception.JwtAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +26,9 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     private final CustomUserDetailsService customUserDetailsService;
+
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Bean
     public AuthenticationManager authenticationManager(
@@ -57,6 +62,11 @@ public class SecurityConfig {
                         ).permitAll()
                         .anyRequest()
                         .authenticated()
+                )
+                .exceptionHandling(
+                        ex -> ex
+                                .accessDeniedHandler(customAccessDeniedHandler)
+                                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 )
                 .userDetailsService(customUserDetailsService)
                 .addFilterBefore(

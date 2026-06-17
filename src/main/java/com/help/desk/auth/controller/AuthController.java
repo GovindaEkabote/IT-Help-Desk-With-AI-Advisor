@@ -1,6 +1,5 @@
 package com.help.desk.auth.controller;
 
-
 import com.help.desk.auth.dto.request.*;
 import com.help.desk.auth.dto.response.AuthResponse;
 import com.help.desk.auth.service.AuthService;
@@ -28,7 +27,6 @@ public class AuthController {
     private final EmailService emailService;
     private final ChangePasswordService changePasswordService;
 
-
     @PostMapping("/login")
     public AuthResponse login(@RequestBody LoginRequest request) {
         return authService.login(request);
@@ -54,7 +52,6 @@ public class AuthController {
                         .build()
         );
     }
-
 
     @GetMapping("/current-user")
     public ResponseEntity<UserResponse> getCurrentUser() {
@@ -118,8 +115,6 @@ public class AuthController {
                         200,
                         true,
                         "Password change Successfully"
-
-                )
-        );
+                ));
     }
 }
