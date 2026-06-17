@@ -1,14 +1,11 @@
 package com.help.desk.auth.controller;
 
 
-import com.help.desk.auth.dto.request.ForgotPasswordRequest;
-import com.help.desk.auth.dto.request.LoginRequest;
-import com.help.desk.auth.dto.request.RefreshTokenRequest;
-import com.help.desk.auth.dto.request.ResetPasswordRequest;
+import com.help.desk.auth.dto.request.*;
 import com.help.desk.auth.dto.response.AuthResponse;
 import com.help.desk.auth.service.AuthService;
+import com.help.desk.auth.service.ChangePasswordService;
 import com.help.desk.auth.service.EmailService;
-import com.help.desk.exception.ApiError;
 import com.help.desk.exception.ApiResponse;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.model.User;
@@ -29,6 +26,7 @@ public class AuthController {
     private final UserRepository userRepository;
     private final UserService userService;
     private final EmailService emailService;
+    private final ChangePasswordService changePasswordService;
 
 
     @PostMapping("/login")
@@ -107,4 +105,21 @@ public class AuthController {
         );
     }
 
+    @PostMapping("/change-password")
+    public ResponseEntity<ApiResponse>  changePassword(
+            @Valid
+            @RequestBody ChangePasswordRequest request
+            ){
+        changePasswordService.changePassword(request);
+
+        return ResponseEntity.ok(
+                new ApiResponse(
+                        LocalDateTime.now(),
+                        200,
+                        true,
+                        "Password change Successfully"
+
+                )
+        );
+    }
 }
