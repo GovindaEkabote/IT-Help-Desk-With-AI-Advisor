@@ -3,6 +3,7 @@ package com.help.desk.user.service.impl;
 import com.help.desk.exception.DuplicateResourceException;
 import com.help.desk.exception.ResourceNotFoundException;
 import com.help.desk.user.dto.request.CreateUserRequest;
+import com.help.desk.user.dto.request.UpdateRoleRequest;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.enums.UserStatus;
@@ -159,5 +160,14 @@ public class UserServiceImpl implements UserService {
                     .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
             user.setActive(false);
             userRepository.save(user);
+    }
+
+    @Override
+    public UserResponse updateRole(Long id, UpdateRoleRequest role) {
+       User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
+
+       user.setRole(role.role());
+       return UserMapper.toResponse(userRepository.save(user));
     }
 }

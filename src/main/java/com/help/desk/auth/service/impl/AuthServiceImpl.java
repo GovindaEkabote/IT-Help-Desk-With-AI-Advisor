@@ -9,17 +9,22 @@ import com.help.desk.auth.repository.RefreshTokenRepository;
 import com.help.desk.auth.service.AuthService;
 import com.help.desk.auth.service.JwtService;
 import com.help.desk.auth.service.RefreshTokenService;
+import com.help.desk.exception.BadRequestException;
 import com.help.desk.exception.ResourceNotFoundException;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 import java.util.Optional;
 
@@ -38,15 +43,31 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthResponse login(LoginRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
-        User user = userRepository.findByEmail(
-                request.getEmail()
-        ).orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        if(request.getEmail() == null || request.getEmail().isEmpty()){
+            throw new BadRequestException("Email is required");
+        }
+        if(request.getPassword() == null || request.getPassword().isEmpty()){
+            throw new BadRequestException("Password is required");
+        }
+
+        User user = userRepository.findByEmail(request.getEmail())
+                        .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getPassword()
+                    )
+            );
+        }catch (BadCredentialsException e){
+            throw new BadRequestException("Invalid email or password");
+        }catch (DisabledException e){
+            throw new BadRequestException("Account is disabled. Please contact support.");
+        }catch (AuthenticationException e){
+            throw new BadRequestException("Authentication failed. Please try again.");
+        }
 
         return generateAuthResponse(user);
     }

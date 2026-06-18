@@ -1,6 +1,7 @@
 package com.help.desk.user.service;
 
 import com.help.desk.user.dto.request.CreateUserRequest;
+import com.help.desk.user.dto.request.UpdateRoleRequest;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
@@ -30,4 +31,6 @@ public interface UserService {
     void activeUser(Long id);
 
     void deactiveUser(Long id);
+
+    UserResponse updateRole(Long id, UpdateRoleRequest role);
 }

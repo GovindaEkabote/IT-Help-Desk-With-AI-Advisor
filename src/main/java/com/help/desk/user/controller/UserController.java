@@ -2,6 +2,7 @@ package com.help.desk.user.controller;
 
 import com.help.desk.exception.ApiResponse;
 import com.help.desk.user.dto.request.CreateUserRequest;
+import com.help.desk.user.dto.request.UpdateRoleRequest;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.enums.UserRole;
 import jakarta.persistence.Table;
@@ -61,12 +62,14 @@ public class UserController {
         return ResponseEntity.ok(userService.getUsersByRole(role));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/status/{active}")
     public ResponseEntity<List<UserResponse>> getUsersByStatus(
             @PathVariable Boolean active) {
         return ResponseEntity.ok(userService.getUsersByActive(active));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping("/{id}/activate")
     public ResponseEntity<String> activateUser(
             @PathVariable Long id) {
@@ -74,6 +77,7 @@ public class UserController {
         return ResponseEntity.ok("User activated successfully");
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping("/{id}/deactivate")
     public ResponseEntity<String> deactivateUser(
             @PathVariable Long id) {
@@ -81,5 +85,12 @@ public class UserController {
         return ResponseEntity.ok("User deactivated successfully");
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @PatchMapping("/{id}/role")
+    public ResponseEntity<UserResponse> updateRole(
+            @PathVariable Long id,
+            @Valid @RequestBody UpdateRoleRequest role) {
+        return ResponseEntity.ok(userService.updateRole(id, role));
+    }
 
 }
