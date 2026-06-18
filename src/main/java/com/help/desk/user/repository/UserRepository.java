@@ -2,6 +2,8 @@ package com.help.desk.user.repository;
 
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.management.relation.Role;
@@ -37,5 +39,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByRole(UserRole role);
 
     List<User> findByActive(Boolean active);
+
+    Page<User> findAllByDeletedFalse(Pageable pageable);
 
 }

@@ -11,6 +11,10 @@ import com.help.desk.user.mapper.UserMapper;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
 import com.help.desk.user.service.UserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -82,14 +86,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserResponse> getAllUsers() {
-        List<User> users = userRepository.findAllByDeletedFalse();
-        if (users.isEmpty()) {
-            throw new ResourceNotFoundException("No users found");
-        }
-        return users.stream()
-                .map(UserMapper::toResponse)
-                .collect(Collectors.toList());
+    public Page<UserResponse> getAllUsers(
+            int page,
+            int size,
+            String sortBy,
+            String sortDirection
+    ) {
+        Sort sort = sortDirection.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        Page<User> users = userRepository.findAllByDeletedFalse(pageable);
+        return users.map(UserMapper::toResponse);
     }
     @Override
     public UserResponse updateUser(Long id, CreateUserRequest request) {
@@ -170,4 +179,6 @@ public class UserServiceImpl implements UserService {
        user.setRole(role.role());
        return UserMapper.toResponse(userRepository.save(user));
     }
+
+
 }

@@ -5,6 +5,8 @@ import com.help.desk.user.dto.request.UpdateRoleRequest;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
+import org.springframework.data.domain.Page;
+
 
 import java.util.List;
 
@@ -18,7 +20,12 @@ public interface UserService {
 
     User getUserByEmployeeId(String employeeId);
 
-    List<UserResponse> getAllUsers();
+    Page<UserResponse> getAllUsers(
+            int page,
+            int size,
+            String sortBy,
+            String sortDirection
+    );
 
     UserResponse updateUser(Long id, CreateUserRequest request);
 
@@ -33,4 +40,5 @@ public interface UserService {
     void deactiveUser(Long id);
 
     UserResponse updateRole(Long id, UpdateRoleRequest role);
+
 }

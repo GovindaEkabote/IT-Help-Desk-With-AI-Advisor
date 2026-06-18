@@ -8,6 +8,7 @@ import com.help.desk.user.enums.UserRole;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import com.help.desk.user.service.UserService;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,9 +33,20 @@ public class UserController {
                 .body(userService.createUser(request));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
-    public ResponseEntity<List<UserResponse>> getAllUsers() {
-        return ResponseEntity.ok(userService.getAllUsers());
+    public ResponseEntity<Page<UserResponse>> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDirection) {
+
+        return ResponseEntity.ok(
+                userService.getAllUsers(
+                        page,
+                        size,
+                        sortBy,
+                        sortDirection));
     }
 
     @GetMapping("/{id}")
