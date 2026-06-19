@@ -84,7 +84,21 @@ public class TicketServiceImpl  implements TicketService {
 
     @Override
     public TicketResponse getTicketByNumber(String ticketNumber) {
-        return null;
+        Ticket ticket = ticketRepository.findByTicketNumber(ticketNumber)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+
+        User user = authService.getCurrentUser();
+
+        UserRole role = user.getRole();
+
+        boolean hasAccess =
+                role == UserRole.SUPER_ADMIN ||
+                        role == UserRole.ADMIN ||
+                        role == UserRole.IT_SUPPORT;
+        if(!hasAccess){
+            throw new AccessDeniedException("You are not authorized to view this ticket");
+        }
+        return mapToResponse(ticket);
     }
 
     @Override

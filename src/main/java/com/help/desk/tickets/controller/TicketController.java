@@ -33,4 +33,12 @@ public class TicketController {
         TicketResponse ticketResponse = ticketService.getTicketById(id);
         return ResponseEntity.ok(ticketResponse);
     }
+
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN','SUPER_ADMIN')")
+    @GetMapping("/get/ticket/{ticketNumber}")
+    public ResponseEntity<TicketResponse> getTicketByNumber(@PathVariable String ticketNumber) {
+        TicketResponse ticketResponse = ticketService.getTicketByNumber(ticketNumber);
+        return ResponseEntity.ok(ticketResponse);
+    }
+
 }
