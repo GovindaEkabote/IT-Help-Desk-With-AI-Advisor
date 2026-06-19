@@ -32,7 +32,5 @@ public class TicketRequest {
 
     private LocalDateTime dueDate;
 
-    private Long createdById;
-
     private Long assignedToId;
 }

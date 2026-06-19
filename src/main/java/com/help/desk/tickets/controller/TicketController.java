@@ -6,13 +6,10 @@ import com.help.desk.tickets.service.TicketService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/tickets")
+@RequestMapping("/ticket")
 public class TicketController {
 
     private final TicketService ticketService;
@@ -21,12 +18,19 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
+    @PreAuthorize("hasAnyRole('EMPLOYEE','ADMIN','SUPER_ADMIN')")
     @PostMapping("/create")
-    @PreAuthorize("hasRole('EMPLOYEE')")
     public ResponseEntity<TicketResponse> createTicket(
             @Valid @RequestBody TicketRequest ticketRequest
     ){
         TicketResponse ticketResponse = ticketService.createTicket(ticketRequest);
+        return ResponseEntity.ok(ticketResponse);
+    }
+
+    @PreAuthorize("hasAnyRole('EMPLOYEE','IT_SUPPORT','ADMIN','SUPER_ADMIN')")
+    @GetMapping("/get/{id}")
+    public ResponseEntity<TicketResponse> getTicketById(@PathVariable Long id) {
+        TicketResponse ticketResponse = ticketService.getTicketById(id);
         return ResponseEntity.ok(ticketResponse);
     }
 }
