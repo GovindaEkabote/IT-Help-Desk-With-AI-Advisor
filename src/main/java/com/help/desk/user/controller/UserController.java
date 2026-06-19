@@ -26,6 +26,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @PostMapping
     public ResponseEntity<UserResponse> createUser(
             @Valid @RequestBody CreateUserRequest request) {
@@ -33,7 +34,7 @@ public class UserController {
                 .body(userService.createUser(request));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN') or hasRole('TEAM_LEAD') or hasRole('MANAGER')")
     @GetMapping
     public ResponseEntity<Page<UserResponse>> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
@@ -54,6 +55,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<UserResponse> updateUser(
             @PathVariable Long id,
@@ -61,27 +63,28 @@ public class UserController {
         return ResponseEntity.ok(userService.updateUser(id, request));
     }
 
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN') or hasRole('TEAM_LEAD') or hasRole('MANAGER')")
     @GetMapping("/role/{role}")
     public ResponseEntity<List<UserResponse>> getUsersByRole(
             @PathVariable UserRole role) {
         return ResponseEntity.ok(userService.getUsersByRole(role));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN') or hasRole('TEAM_LEAD') or hasRole('MANAGER')")
     @GetMapping("/status/{active}")
     public ResponseEntity<List<UserResponse>> getUsersByStatus(
             @PathVariable Boolean active) {
         return ResponseEntity.ok(userService.getUsersByActive(active));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN') ")
     @PatchMapping("/{id}/activate")
     public ResponseEntity<String> activateUser(
             @PathVariable Long id) {
@@ -89,7 +92,7 @@ public class UserController {
         return ResponseEntity.ok("User activated successfully");
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('SUPER_ADMIN')")
     @PatchMapping("/{id}/deactivate")
     public ResponseEntity<String> deactivateUser(
             @PathVariable Long id) {
@@ -97,7 +100,7 @@ public class UserController {
         return ResponseEntity.ok("User deactivated successfully");
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @PatchMapping("/{id}/role")
     public ResponseEntity<UserResponse> updateRole(
             @PathVariable Long id,

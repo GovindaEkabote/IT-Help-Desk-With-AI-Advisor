@@ -8,5 +8,4 @@ public enum UserRole {
     MANAGER,
     ADMIN,
     SUPER_ADMIN
-
 }
