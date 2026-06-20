@@ -41,7 +41,7 @@ public class TicketResponse {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    // Additional useful fields
+    // Additional useful fieldsclosedTickets
     private Integer commentCount;
     private Integer historyCount;
     private Boolean isOverdue;

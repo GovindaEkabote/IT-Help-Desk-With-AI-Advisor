@@ -103,7 +103,31 @@ public class TicketServiceImpl  implements TicketService {
 
     @Override
     public TicketResponse updateTicket(Long id, TicketRequest ticketRequest) {
-        return null;
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+        User currentUser = authService.getCurrentUser();
+
+        boolean hasAccess =
+                ticket.getCreatedBy().getId().equals(currentUser.getId());
+
+        if (!hasAccess) {
+            throw new AccessDeniedException("You are not authorized to update this ticket");
+        }
+
+        ticket.setTitle(ticketRequest.getTitle());
+        ticket.setTitle(ticketRequest.getDescription());
+        ticket.setCategory(ticketRequest.getCategory());
+        ticket.setTitle(ticketRequest.getPriority());
+        ticket.setUpdatedAt(LocalDateTime.now());
+
+        User assignedTo = null;
+        if (ticketRequest.getAssignedToId() != null) {
+            assignedTo = userRepository.findById(ticketRequest.getAssignedToId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Assigned Not Found"));
+            ticket.setAssignedTo(assignedTo);
+        }
+        Ticket updatedTicket = ticketRepository.save(ticket);
+        return mapToResponse(updatedTicket);
     }
 
     @Override

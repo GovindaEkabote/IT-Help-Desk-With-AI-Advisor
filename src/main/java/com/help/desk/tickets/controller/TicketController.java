@@ -41,4 +41,11 @@ public class TicketController {
         return ResponseEntity.ok(ticketResponse);
     }
 
+    @PreAuthorize("hasAnyRole('EMPLOYEE')")
+        @PutMapping("/update/{id}")
+    public ResponseEntity<TicketResponse> updateTicket(@PathVariable Long id, @Valid @RequestBody TicketRequest ticketRequest) {
+        TicketResponse ticketResponse = ticketService.updateTicket(id, ticketRequest);
+        return ResponseEntity.ok(ticketResponse);
+    }
+
 }
