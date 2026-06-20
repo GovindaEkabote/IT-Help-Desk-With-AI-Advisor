@@ -132,12 +132,62 @@ public class TicketServiceImpl  implements TicketService {
 
     @Override
     public void deleteTicket(Long id) {
-
+        if(!ticketRepository.existsById(id)){
+            throw new ResourceNotFoundException("Ticket Not Found");
+        }
+        ticketRepository.deleteById(id);
     }
 
     @Override
     public TicketResponse assignTicket(Long id, Long userId) {
-        return null;
+
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+
+        User assignee = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User Not Found"));
+
+        if (assignee.getRole() != UserRole.IT_SUPPORT) {
+            throw new IllegalArgumentException(
+                    "Ticket can only be assigned to IT_SUPPORT users");
+        }
+
+        if (ticket.getStatus() == Status.RESOLVED ||
+                ticket.getStatus() == Status.CLOSED) {
+            throw new IllegalStateException(
+                    "Resolved/Closed tickets cannot be reassigned");
+        }
+
+        if (ticket.getAssignedTo() != null &&
+                ticket.getAssignedTo().getId().equals(userId)) {
+            throw new IllegalStateException(
+                    "Ticket is already assigned to this user");
+        }
+
+        ticket.setAssignedTo(assignee);
+        ticket.setStatus(Status.ASSIGNED);
+        ticket.setUpdatedAt(LocalDateTime.now());
+
+        return mapToResponse(ticketRepository.save(ticket));
+    }
+
+    @Override
+    public TicketResponse claimTicket(Long id) {
+        User currentUser = authService.getCurrentUser();
+
+        if(currentUser.getRole() != UserRole.IT_SUPPORT){
+            throw new AccessDeniedException("You are not authorized to claim this ticket");
+        }
+
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+        if (ticket.getAssignedTo() != null){
+            throw new IllegalStateException("Ticket is already assigned");
+        }
+        ticket.setAssignedTo(currentUser);
+        ticket.setStatus(Status.ASSIGNED);
+        ticket.setUpdatedAt(LocalDateTime.now());
+        return mapToResponse(ticketRepository.save(ticket));
     }
 
     @Override

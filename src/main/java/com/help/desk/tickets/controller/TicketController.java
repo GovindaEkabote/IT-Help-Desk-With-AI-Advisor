@@ -48,4 +48,27 @@ public class TicketController {
         return ResponseEntity.ok(ticketResponse);
     }
 
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN','SUPER_ADMIN')")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
+        ticketService.deleteTicket(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN','SUPER_ADMIN','MANAGER')")
+    @PostMapping("/{ticketId}/assign/{userId}")
+    public ResponseEntity<TicketResponse> assignTicket(
+            @PathVariable Long ticketId,
+            @PathVariable Long userId) {
+        TicketResponse ticketResponse = ticketService.assignTicket(ticketId, userId);
+        return ResponseEntity.ok(ticketResponse);
+    }
+
+    @PreAuthorize("hasRole('IT_SUPPORT')")
+    @PostMapping("/{ticketId}/claim")
+    public ResponseEntity<TicketResponse> claimTicket(@PathVariable Long ticketId) {
+        TicketResponse ticketResponse = ticketService.claimTicket(ticketId);
+        return ResponseEntity.ok(ticketResponse);
+    }
+
 }
