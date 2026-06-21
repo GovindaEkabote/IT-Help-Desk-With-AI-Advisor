@@ -128,4 +128,23 @@ public class TicketController {
         return ResponseEntity.ok(
                 ticketService.getResolvedTicketsByUser(id, pageable));
     }
-}
+
+    @PreAuthorize("hasRole('IT_SUPPORT')")
+    @GetMapping("/my-pending")
+    public  ResponseEntity<Page<TicketResponse>> getUserPendingTickets(
+            Pageable  pageable
+    ){
+        return ResponseEntity.ok(
+                ticketService.getPendingTicketsByUser(
+                        authService.getCurrentUser().getId(),
+                        pageable));
+    }
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/pending")
+    public ResponseEntity<Page<TicketResponse>> getAllPendingTickets(
+            Pageable pageable) {
+
+        return ResponseEntity.ok(
+                ticketService.getAllPendingTickets(pageable));
+    }
+ }

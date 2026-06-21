@@ -25,10 +25,9 @@ public interface TicketService {
 
     // User-specific queries
     Page<TicketResponse> getTicketsByCreatedById(Pageable pageable);
-//    Page<TicketResponse> getTicketsByAssignedToId(Long userId, Pageable pageable);
     Page<TicketResponse> getResolvedTicketsByUser(Long userId, Pageable pageable);
     Page<TicketResponse> getPendingTicketsByUser(Long userId, Pageable pageable);
-
+    Page<TicketResponse> getAllPendingTickets(Pageable pageable);
 
 
 }

@@ -25,4 +25,13 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
             Long userId,
             Status status,
             Pageable pageable);
+
+    Page<Ticket> findByAssignedToIdAndStatus(
+            Long assignedToId,
+            Status status,
+            Pageable pageable);
+
+    Page<Ticket> findByStatus(
+            Status status,
+            Pageable pageable);
 }
