@@ -1,5 +1,6 @@
 package com.help.desk.tickets.controller;
 
+import com.help.desk.auth.service.AuthService;
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
 import com.help.desk.tickets.service.TicketService;
@@ -17,9 +18,11 @@ import java.util.List;
 public class TicketController {
 
     private final TicketService ticketService;
+    private final AuthService authService;
 
-    public TicketController(TicketService ticketService){
+    public TicketController(TicketService ticketService, AuthService authService){
         this.ticketService = ticketService;
+        this.authService =  authService;
     }
 
     @PreAuthorize("hasAnyRole('EMPLOYEE','ADMIN','SUPER_ADMIN')")
@@ -105,4 +108,24 @@ public class TicketController {
         return ResponseEntity.ok(ticketResponses);
     }
 
+    @PreAuthorize("hasRole('IT_SUPPORT')")
+    @GetMapping("/my-resolved")
+    public ResponseEntity<Page<TicketResponse>> getMyResolvedTickets(
+            Pageable pageable) {
+
+        return ResponseEntity.ok(
+                ticketService.getResolvedTicketsByUser(
+                        authService.getCurrentUser().getId(),
+                        pageable));
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/resolved/{id}")
+    public ResponseEntity<Page<TicketResponse>> getResolvedTickets(
+            @PathVariable Long id,
+            Pageable pageable) {
+
+        return ResponseEntity.ok(
+                ticketService.getResolvedTicketsByUser(id, pageable));
+    }
 }

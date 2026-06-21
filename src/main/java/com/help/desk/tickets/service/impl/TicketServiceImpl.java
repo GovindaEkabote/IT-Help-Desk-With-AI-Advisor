@@ -272,14 +272,31 @@ public class TicketServiceImpl  implements TicketService {
     }
 
     @Override
-    public Page<TicketResponse> getTicketsByAssignedToId(Long userId, Pageable pageable) {
-        return null;
+    public Page<TicketResponse> getResolvedTicketsByUser(
+            Long userId,
+            Pageable pageable) {
+
+        User currentUser = authService.getCurrentUser();
+
+        boolean hasAccess =
+                currentUser.getRole() == UserRole.SUPER_ADMIN ||
+                        currentUser.getRole() == UserRole.ADMIN ||
+                        currentUser.getRole() == UserRole.MANAGER ||
+                        currentUser.getId().equals(userId);
+
+        if (!hasAccess) {
+            throw new AccessDeniedException(
+                    "You are not authorized to view these tickets");
+        }
+
+        return ticketRepository
+                .findByCreatedByIdAndStatus(
+                        userId,
+                        Status.CLOSED,
+                        pageable)
+                .map(this::mapToResponse);
     }
 
-    @Override
-    public Page<TicketResponse> getResolvedTicketsByUser(Long userId, Pageable pageable) {
-        return null;
-    }
 
     @Override
     public Page<TicketResponse> getPendingTicketsByUser(Long userId, Pageable pageable) {
