@@ -71,4 +71,27 @@ public class TicketController {
         return ResponseEntity.ok(ticketResponse);
     }
 
+
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN','SUPER_ADMIN')")
+    @PostMapping("/{ticketId}/resolve/{userId}")
+    public ResponseEntity<TicketResponse> resolveTicket(
+            @PathVariable Long ticketId,
+            @PathVariable Long userId) {
+
+        return ResponseEntity.ok(
+                ticketService.resolveTicket(ticketId, userId));
+    }
+
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN','SUPER_ADMIN','MANAGER')")
+    @PatchMapping("/{ticketId}/status")
+    public ResponseEntity<TicketResponse> updateStatus(
+            @PathVariable Long ticketId,
+            @RequestParam String status) {
+
+        return ResponseEntity.ok(
+                ticketService.updateTicketStatus(ticketId, status));
+    }
+
+
+
 }

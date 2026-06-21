@@ -192,15 +192,74 @@ public class TicketServiceImpl  implements TicketService {
 
     @Override
     public TicketResponse resolveTicket(Long id, Long userId) {
-        return null;
+        User currentUser = authService.getCurrentUser();
+
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+
+        User resolver = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Resolver Not Found"));
+
+        boolean canResolve =
+                currentUser.getRole() == UserRole.IT_SUPPORT ||
+                currentUser.getRole() == UserRole.ADMIN ||
+                currentUser.getRole() == UserRole.SUPER_ADMIN;
+
+        if (!canResolve) {
+            throw new AccessDeniedException("You are not authorized to resolve this ticket");
+        }
+
+        if(currentUser.getRole() == UserRole.IT_SUPPORT &&
+                (ticket.getAssignedTo() == null ||
+                        !ticket.getAssignedTo().getId().equals(currentUser.getId()))
+        ){
+            throw new AccessDeniedException("You are not authorized to resolve this ticket");
+        }
+
+        ticket.setStatus(Status.RESOLVED);
+        ticket.setResolvedBy(resolver);
+        ticket.setResolvedAt(LocalDateTime.now());
+        ticket.setUpdatedAt(LocalDateTime.now());
+        return mapToResponse(ticketRepository.save(ticket));
+
     }
 
     @Override
     public TicketResponse updateTicketStatus(Long id, String status) {
-        return null;
+        User currentUser = authService.getCurrentUser();
+
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket Not Found"));
+
+        boolean canUpdate =
+                currentUser.getRole() == UserRole.IT_SUPPORT ||
+                        currentUser.getRole() == UserRole.ADMIN ||
+                        currentUser.getRole() == UserRole.SUPER_ADMIN ||
+                        currentUser.getRole() == UserRole.MANAGER;
+
+        if (!canUpdate) {
+            throw new AccessDeniedException("You are not allowed to update ticket status");
+        }
+
+        Status newStatus;
+        try {
+            newStatus = Status.valueOf(status.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid status: " + status);
+        }
+
+        // optional safety rules
+        if (ticket.getStatus() == Status.RESOLVED && newStatus != Status.CLOSED) {
+            throw new IllegalStateException("Resolved ticket can only be closed");
+        }
+
+        ticket.setStatus(newStatus);
+        ticket.setUpdatedAt(LocalDateTime.now());
+        ticket.setResolvedBy(currentUser);
+        ticket.setResolvedAt(LocalDateTime.now());
+
+        return mapToResponse(ticketRepository.save(ticket));
     }
-
-
 
 //     Helper Methods
 
@@ -217,13 +276,30 @@ public class TicketServiceImpl  implements TicketService {
                 .status(ticket.getStatus())
                 .priority(ticket.getPriority())
                 .category(ticket.getCategory())
-                .createdByName(ticket.getCreatedBy().getFirstName())
+                .createdById(
+                        ticket.getCreatedBy() != null
+                                ? ticket.getCreatedBy().getId()
+                                : null
+                )
+                .createdByName(
+                        ticket.getCreatedBy() != null
+                                ? ticket.getCreatedBy().getFirstName()
+                                : null
+                )
+
+                .assignedToId(
+                        ticket.getAssignedTo() != null
+                                ? ticket.getAssignedTo().getId()
+                                : null
+                )
                 .assignedToName(
                         ticket.getAssignedTo() != null
                                 ? ticket.getAssignedTo().getFirstName()
                                 : null
                 )
+
                 .createdAt(ticket.getCreatedAt())
+                .updatedAt(ticket.getUpdatedAt())
                 .build();
     }
 }
