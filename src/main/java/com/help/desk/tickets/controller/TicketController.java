@@ -4,9 +4,13 @@ import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
 import com.help.desk.tickets.service.TicketService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/ticket")
@@ -93,5 +97,12 @@ public class TicketController {
     }
 
 
+    @PreAuthorize("hasAnyRole('EMPLOYEE')")
+    @GetMapping("/my-tickets")
+    public ResponseEntity<Page<TicketResponse>> getTicketsByCreatedBy(
+            Pageable pageable) {
+        Page<TicketResponse> ticketResponses = ticketService.getTicketsByCreatedById(pageable);
+        return ResponseEntity.ok(ticketResponses);
+    }
 
 }

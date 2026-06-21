@@ -13,6 +13,8 @@ import com.help.desk.tickets.service.TicketService;
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 
@@ -259,6 +261,29 @@ public class TicketServiceImpl  implements TicketService {
         ticket.setResolvedAt(LocalDateTime.now());
 
         return mapToResponse(ticketRepository.save(ticket));
+    }
+
+    @Override
+    public Page<TicketResponse> getTicketsByCreatedById(Pageable pageable) {
+        User user = authService.getCurrentUser();
+
+        return ticketRepository.findByCreatedById(user.getId(), pageable)
+                .map(this::mapToResponse);
+    }
+
+    @Override
+    public Page<TicketResponse> getTicketsByAssignedToId(Long userId, Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public Page<TicketResponse> getResolvedTicketsByUser(Long userId, Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public Page<TicketResponse> getPendingTicketsByUser(Long userId, Pageable pageable) {
+        return null;
     }
 
 //     Helper Methods
