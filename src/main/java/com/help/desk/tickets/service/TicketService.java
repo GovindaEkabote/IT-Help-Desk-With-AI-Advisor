@@ -7,6 +7,7 @@ import com.help.desk.tickets.model.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -34,5 +35,9 @@ public interface TicketService {
     // Ticket history for a specific user
     Page<TicketResponse> getTicketHistoryByUser(Long userId, Pageable pageable);
     Map<String , Object> getUserTicketStatistics(Long userId, Pageable pageable);
+
+    // Admin dashboard queries
+    Page<TicketResponse> getAllTickets(Pageable pageable);
+    Page<TicketResponse> getTicketsByDateRange(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable);
 
 }

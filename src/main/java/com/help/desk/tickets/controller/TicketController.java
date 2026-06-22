@@ -7,10 +7,12 @@ import com.help.desk.tickets.service.TicketService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -168,4 +170,36 @@ public class TicketController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Get all tickets with pagination, sorting
+     */
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/user/tickets/{userId}")
+    public ResponseEntity<Page<TicketResponse>> getTicketsByUser(Pageable pageable) {
+        return ResponseEntity.ok(ticketService.getAllTickets(pageable));
+    }
+
+    /**
+     * Get tickets by date range with pagination
+     * Example:
+     * /api/tickets/date-range?startDate=2026-01-01T00:00:00&endDate=2026-06-22T23:59:59
+     */
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/date-range")
+    public ResponseEntity<Page<TicketResponse>> getTicketsByDateRange(
+            @RequestParam("startDate")
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime startDate,
+
+            @RequestParam("endDate")
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime endDate,
+
+            Pageable pageable
+    ) {
+        return ResponseEntity.ok(
+                ticketService.getTicketsByDateRange(startDate, endDate, pageable)
+        );
+    }
  }

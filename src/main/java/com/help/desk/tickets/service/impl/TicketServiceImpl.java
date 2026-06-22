@@ -465,6 +465,27 @@ public class TicketServiceImpl  implements TicketService {
         );
     }
 
+    @Override
+    public Page<TicketResponse> getAllTickets(Pageable pageable) {
+        return ticketRepository.findAll(pageable).map(this::mapToResponse);
+    }
+
+    @Override
+    public Page<TicketResponse> getTicketsByDateRange(
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            Pageable pageable) {
+
+        if (startDate == null){
+            startDate = LocalDateTime.of(2020, 1, 1, 0, 0);
+        }
+        if (endDate == null){
+            endDate = LocalDateTime.now();
+        }
+        return ticketRepository.findTicketsByDateRange(startDate, endDate, pageable)
+                .map(this::mapToResponse);
+    }
+
 
 //     Helper Methods
 
