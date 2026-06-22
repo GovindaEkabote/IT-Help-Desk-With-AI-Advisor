@@ -5,6 +5,7 @@ import com.help.desk.auth.service.AuthService;
 import com.help.desk.exception.ResourceNotFoundException;
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
+import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
 import com.help.desk.tickets.enums.Priority;
 import com.help.desk.tickets.enums.Status;
 import com.help.desk.tickets.model.Ticket;
@@ -19,7 +20,9 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 
 
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.*;
 
 @Service
 
@@ -325,6 +328,143 @@ public class TicketServiceImpl  implements TicketService {
                 .findByStatus(Status.NEW, pageable)
                 .map(this::mapToResponse);
     }
+
+    @Override
+    public Page<TicketResponse> getTicketHistoryByUser(Long userId, Pageable pageable) {
+        User user = authService.getCurrentUser();
+
+        boolean hasAccess =
+                user.getRole() == UserRole.MANAGER ||
+                        user.getRole() == UserRole.ADMIN ||
+                        user.getRole() == UserRole.SUPER_ADMIN ||
+                        user.getId().equals(userId);
+
+        if (!hasAccess){
+            throw new AccessDeniedException(
+                    "You are not authorized to view these tickets");
+        }
+        return ticketRepository.findByCreatedById(userId, pageable)
+                .map(this::mapToResponse);
+    }
+
+    @Override
+    public Map<String, Object> getUserTicketStatistics(Long userId, Pageable pageable) {
+
+        // Authorization check
+        User currentUser = authService.getCurrentUser();
+        boolean hasAccess = currentUser.getRole() == UserRole.SUPER_ADMIN ||
+                currentUser.getRole() == UserRole.ADMIN ||
+                currentUser.getRole() == UserRole.MANAGER ||
+                currentUser.getId().equals(userId);
+
+        if (!hasAccess) {
+            throw new AccessDeniedException("You are not authorized to view statistics");
+        }
+
+        // Fetch tickets
+        Page<Ticket> ticketPage = ticketRepository.findByCreatedById(userId, pageable);
+        List<Ticket> tickets = ticketPage.getContent();
+
+        // Calculate total tickets from the page
+        long totalTickets = ticketPage.getTotalElements();
+
+        // =========================
+        // PROCESS TICKETS ONCE - More efficient!
+        // =========================
+        long newTickets = 0;
+        long inProgressTickets = 0;
+        long resolvedTickets = 0;
+        long closedTickets = 0;
+        long escalatedTickets = 0;
+
+        Map<String, Long> ticketsByPriority = new HashMap<>();
+        Map<String, Long> ticketsByCategory = new HashMap<>();
+        Map<String, Long> ticketsBySource = new HashMap<>();
+
+        List<Long> resolutionTimes = new ArrayList<>();
+        List<Integer> satisfactionRatings = new ArrayList<>();
+
+        for (Ticket ticket : tickets) {
+            // Count by status
+            switch (ticket.getStatus()) {
+                case NEW -> newTickets++;
+                case IN_PROGRESS -> inProgressTickets++;
+                case RESOLVED -> resolvedTickets++;
+                case CLOSED -> closedTickets++;
+                case ESCALATED -> escalatedTickets++;
+            }
+
+            // Group by priority
+            ticketsByPriority.merge(ticket.getPriority().name(), 1L, Long::sum);
+
+            // Group by category
+            ticketsByCategory.merge(ticket.getCategory().name(), 1L, Long::sum);
+
+            // Group by source
+            ticketsBySource.merge(ticket.getSource().name(), 1L, Long::sum);
+
+            // Collect resolution times
+            if (ticket.getResolvedAt() != null) {
+                resolutionTimes.add(Duration.between(ticket.getCreatedAt(), ticket.getResolvedAt()).toHours());
+            }
+
+            // Collect satisfaction ratings
+            if (ticket.getSatisfactionRating() != null) {
+                satisfactionRatings.add(ticket.getSatisfactionRating());
+            }
+        }
+
+        // =========================
+        // CALCULATE METRICS
+        // =========================
+        long successTickets = resolvedTickets + closedTickets;
+        double resolutionRate = totalTickets == 0 ? 0.0 : ((double) successTickets / totalTickets) * 100;
+
+        double avgResolutionTimeHours = resolutionTimes.stream()
+                .mapToLong(Long::longValue)
+                .average()
+                .orElse(0.0);
+
+        double satisfactionRate = satisfactionRatings.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0.0);
+
+        // =========================
+        // BUILD RESPONSE
+        // =========================
+        TicketStatisticsResponse response = TicketStatisticsResponse.builder()
+                .period("ALL")
+                .periodLabel("All time")
+                .startDate(null)
+                .endDate(null)
+                .totalTickets(totalTickets)
+                .newTickets(newTickets)
+                .inProgressTickets(inProgressTickets)
+                .resolvedTickets(resolvedTickets)
+                .closedTickets(closedTickets)
+                .escalatedTickets(escalatedTickets)  // Now uses calculated value
+                .resolutionRate(resolutionRate)
+                .averageResolutionTimeHours(avgResolutionTimeHours)
+                .satisfactionRate(satisfactionRate)
+                .ticketsByPriority(ticketsByPriority)
+                .ticketsByCategory(ticketsByCategory)
+                .ticketsBySource(ticketsBySource)
+                // Not implemented yet (safe defaults)
+                .averageResponseTimeHours(0.0)
+                .overdueTickets(0L)
+                .totalSatisfactionScore(satisfactionRatings.stream().mapToInt(Integer::intValue).sum())
+                .totalSatisfactionRatings((long) satisfactionRatings.size())
+                .ticketsByAssignee(Collections.emptyMap())
+                .ticketsByCreator(Collections.emptyMap())
+                .build();
+
+        return Map.of(
+                "success", true,
+                "data", response
+        );
+    }
+
 
 //     Helper Methods
 

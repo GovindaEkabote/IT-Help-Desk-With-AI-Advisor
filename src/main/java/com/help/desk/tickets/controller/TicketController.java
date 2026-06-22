@@ -12,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/ticket")
@@ -147,4 +148,24 @@ public class TicketController {
         return ResponseEntity.ok(
                 ticketService.getAllPendingTickets(pageable));
     }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/user/history/{userId}")
+    public  ResponseEntity<Page<TicketResponse>> getTicketHistoryByUser(
+            @PathVariable Long userId, Pageable pageable ){
+        return ResponseEntity.ok(
+                ticketService.getTicketHistoryByUser(
+                        userId,
+                         pageable
+                )
+        );
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/user/statistics/{userId}")
+    public ResponseEntity<Map<String, Object>> getTicketStatisticsByUser(@PathVariable Long userId, Pageable pageable) {
+        Map<String, Object> response = ticketService.getUserTicketStatistics(userId, pageable);
+        return ResponseEntity.ok(response);
+    }
+
  }

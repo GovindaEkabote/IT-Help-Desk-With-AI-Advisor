@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class TicketResponse {
     private Long id;
+    private Long totalTickets;
     private String ticketNumber;
     private String title;
     private String description;

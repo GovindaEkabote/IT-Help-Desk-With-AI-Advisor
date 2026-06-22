@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TicketService {
 
@@ -29,5 +30,9 @@ public interface TicketService {
     Page<TicketResponse> getPendingTicketsByUser(Long userId, Pageable pageable);
     Page<TicketResponse> getAllPendingTickets(Pageable pageable);
 
+
+    // Ticket history for a specific user
+    Page<TicketResponse> getTicketHistoryByUser(Long userId, Pageable pageable);
+    Map<String , Object> getUserTicketStatistics(Long userId, Pageable pageable);
 
 }

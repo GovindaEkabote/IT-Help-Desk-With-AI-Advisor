@@ -5,6 +5,7 @@ import com.help.desk.tickets.model.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     Optional<Ticket> findByTicketNumber(String ticketNumber);
 
     Page<Ticket> findByCreatedById(Long userId, Pageable pageable);
+
 
     Page<Ticket> findByAssignedToId(Long userId, Pageable pageable);
 
@@ -34,4 +36,16 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     Page<Ticket> findByStatus(
             Status status,
             Pageable pageable);
+
+    // Counts for user statistics
+    long countByCreatedById(Long userId);
+    long countByAssignedToId(Long userId);
+    long countByResolvedById(Long userId);
+    long countByCreatedByIdAndStatus(Long userId, Status status);
+    long countByAssignedToIdAndStatus(Long userId, Status status);
+    @Query("SELECT t FROM Ticket t WHERE t.createdBy.id = :userId")
+    List<Ticket> findAllByCreatedById(Long userId);
+
+
 }
+
