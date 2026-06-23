@@ -2,6 +2,7 @@ package com.help.desk.tickets.service;
 
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
+import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
 import com.help.desk.tickets.enums.Status;
 import com.help.desk.tickets.model.Ticket;
 import org.springframework.data.domain.Page;
@@ -39,5 +40,23 @@ public interface TicketService {
     // Admin dashboard queries
     Page<TicketResponse> getAllTickets(Pageable pageable);
     Page<TicketResponse> getTicketsByDateRange(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable);
+
+    // Daily statistics
+    TicketStatisticsResponse getDailyStatistics(LocalDateTime date);
+    List<TicketStatisticsResponse> getDailyStatisticsForRange(LocalDateTime startDate, LocalDateTime endDate);
+
+    // Weekly statistics
+    TicketStatisticsResponse getWeeklyStatistics(int year, int week);
+    List<TicketStatisticsResponse> getWeeklyStatisticsForRange(int startYear, int startWeek, int endYear, int endWeek);
+
+    // Monthly statistics
+    TicketStatisticsResponse getMonthlyStatistics(int year, int month);
+    List<TicketStatisticsResponse> getMonthlyStatisticsForRange(int startYear, int startMonth, int endYear, int endMonth);
+
+    // Last 6 months statistics
+    List<TicketStatisticsResponse> getLastSixMonthsStatistics();
+
+    // Dashboard summary
+    Map<String, Object> getAdminDashboardSummary();
 
 }

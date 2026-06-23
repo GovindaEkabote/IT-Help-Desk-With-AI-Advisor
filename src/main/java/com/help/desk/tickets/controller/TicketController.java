@@ -3,7 +3,9 @@ package com.help.desk.tickets.controller;
 import com.help.desk.auth.service.AuthService;
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
+import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
 import com.help.desk.tickets.service.TicketService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +31,11 @@ public class TicketController {
         this.authService =  authService;
     }
 
-    @PreAuthorize("hasAnyRole('EMPLOYEE','ADMIN','SUPER_ADMIN')")
+    // ==================== CREATE ====================
+
+    @PreAuthorize("hasAnyRole('EMPLOYEE','ADMIN')")
     @PostMapping("/create")
+    @Operation(summary = "Create a new ticket")
     public ResponseEntity<TicketResponse> createTicket(
             @Valid @RequestBody TicketRequest ticketRequest
     ){
@@ -201,5 +207,17 @@ public class TicketController {
         return ResponseEntity.ok(
                 ticketService.getTicketsByDateRange(startDate, endDate, pageable)
         );
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/daily")
+    public ResponseEntity<TicketStatisticsResponse> getDailyStatistics(
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate date
+    ) {
+        LocalDateTime dateTime = date != null ? date.atStartOfDay() : LocalDateTime.now();
+        TicketStatisticsResponse stats = ticketService.getDailyStatistics(dateTime);
+        return ResponseEntity.ok(stats);
     }
  }

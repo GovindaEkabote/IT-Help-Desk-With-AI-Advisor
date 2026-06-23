@@ -24,10 +24,12 @@ public class TicketStatisticsResponse {
     // Counts
     private Long totalTickets;
     private Long newTickets;
+    private Long assignedTickets;
     private Long inProgressTickets;
     private Long resolvedTickets;
     private Long closedTickets;
     private Long cancelledTickets;
+    private Long openTickets;
 
     // By priority
     private Map<String, Long> ticketsByPriority;

@@ -120,17 +120,17 @@ public class TicketServiceImpl  implements TicketService {
         }
 
         ticket.setTitle(ticketRequest.getTitle());
-        ticket.setTitle(ticketRequest.getDescription());
+        ticket.setDescription(ticketRequest.getDescription());
         ticket.setCategory(ticketRequest.getCategory());
-        ticket.setTitle(ticketRequest.getPriority());
+        ticket.setPriority(Priority.valueOf(ticketRequest.getPriority()));
         ticket.setUpdatedAt(LocalDateTime.now());
 
-        User assignedTo = null;
         if (ticketRequest.getAssignedToId() != null) {
-            assignedTo = userRepository.findById(ticketRequest.getAssignedToId())
+            User assignedTo = userRepository.findById(ticketRequest.getAssignedToId())
                     .orElseThrow(() -> new ResourceNotFoundException("Assigned Not Found"));
             ticket.setAssignedTo(assignedTo);
         }
+
         Ticket updatedTicket = ticketRepository.save(ticket);
         return mapToResponse(updatedTicket);
     }
@@ -486,11 +486,61 @@ public class TicketServiceImpl  implements TicketService {
                 .map(this::mapToResponse);
     }
 
+    @Override
+    public TicketStatisticsResponse getDailyStatistics(LocalDateTime date) {
+
+        // If date is null, use today
+        if (date == null) {
+            date = LocalDateTime.now();
+        }
+
+        // Set to start and end of day
+        LocalDateTime startOfDay = date.withHour(0).withMinute(0).withSecond(0).withNano(0);
+        LocalDateTime endOfDay = date.withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        return calculateStatistics(startOfDay, endOfDay, "DAY", date.toString());
+    }
+
+    @Override
+    public List<TicketStatisticsResponse> getDailyStatisticsForRange(LocalDateTime startDate, LocalDateTime endDate) {
+        return List.of();
+    }
+
+    @Override
+    public TicketStatisticsResponse getWeeklyStatistics(int year, int week) {
+        return null;
+    }
+
+    @Override
+    public List<TicketStatisticsResponse> getWeeklyStatisticsForRange(int startYear, int startWeek, int endYear, int endWeek) {
+        return List.of();
+    }
+
+    @Override
+    public TicketStatisticsResponse getMonthlyStatistics(int year, int month) {
+        return null;
+    }
+
+    @Override
+    public List<TicketStatisticsResponse> getMonthlyStatisticsForRange(int startYear, int startMonth, int endYear, int endMonth) {
+        return List.of();
+    }
+
+    @Override
+    public List<TicketStatisticsResponse> getLastSixMonthsStatistics() {
+        return List.of();
+    }
+
+    @Override
+    public Map<String, Object> getAdminDashboardSummary() {
+        return Map.of();
+    }
+
 
 //     Helper Methods
 
     private String generateTicketNumber() {
-        return "TKT-" + System.currentTimeMillis();
+        return "TK-" + System.currentTimeMillis() ;
     }
 
     private TicketResponse mapToResponse(Ticket ticket) {
@@ -528,4 +578,151 @@ public class TicketServiceImpl  implements TicketService {
                 .updatedAt(ticket.getUpdatedAt())
                 .build();
     }
+
+    private TicketStatisticsResponse calculateStatistics(LocalDateTime startDate, LocalDateTime endDate,
+                                                         String periodType, String periodLabel) {
+        // Get tickets in date range
+        Page<Ticket> ticketPage = ticketRepository.findTicketsByDateRange(startDate, endDate, Pageable.unpaged());
+        List<Ticket> tickets = ticketPage.getContent();
+
+        // Initialize counters
+        long totalTickets = tickets.size();
+        long newTickets = 0;
+        long assignedTickets = 0;
+        long inProgressTickets = 0;
+        long resolvedTickets = 0;
+        long closedTickets = 0;
+        long escalatedTickets = 0;
+
+        Map<String, Long> ticketsByPriority = new HashMap<>();
+        Map<String, Long> ticketsByCategory = new HashMap<>();
+        Map<String, Long> ticketsBySource = new HashMap<>();
+        Map<String, Long> ticketsByAssignee = new HashMap<>();
+        Map<String, Long> ticketsByCreator = new HashMap<>();
+
+        List<Long> resolutionTimes = new ArrayList<>();
+        List<Integer> satisfactionRatings = new ArrayList<>();
+
+        // Process all tickets
+        for (Ticket ticket : tickets) {
+            // Count by status
+            switch (ticket.getStatus()) {
+                case NEW -> newTickets++;
+                case ASSIGNED -> assignedTickets++;
+                case IN_PROGRESS -> inProgressTickets++;
+                case RESOLVED -> resolvedTickets++;
+                case CLOSED -> closedTickets++;
+                case ESCALATED -> escalatedTickets++;
+            }
+
+            // Group by priority
+            ticketsByPriority.merge(ticket.getPriority().name(), 1L, Long::sum);
+
+            // Group by category
+            if (ticket.getCategory() != null) {
+                ticketsByCategory.merge(ticket.getCategory().name(), 1L, Long::sum);
+            }
+
+            // Group by source
+            if (ticket.getSource() != null) {
+                ticketsBySource.merge(ticket.getSource().name(), 1L, Long::sum);
+            }
+
+            // Group by assignee
+            if (ticket.getAssignedTo() != null) {
+                ticketsByAssignee.merge(ticket.getAssignedTo().getFirstName(), 1L, Long::sum);
+            }
+
+            // Group by creator
+            if (ticket.getCreatedBy() != null) {
+                ticketsByCreator.merge(ticket.getCreatedBy().getFirstName(), 1L, Long::sum);
+            }
+
+            // Resolution time
+            if (ticket.getResolvedAt() != null && ticket.getCreatedAt() != null) {
+                long hours = Duration.between(ticket.getCreatedAt(), ticket.getResolvedAt()).toHours();
+                resolutionTimes.add(hours);
+            }
+
+            // Satisfaction rating
+            if (ticket.getSatisfactionRating() != null) {
+                satisfactionRatings.add(ticket.getSatisfactionRating());
+            }
+        }
+
+        // Calculate metrics
+        long openTickets = newTickets + assignedTickets + inProgressTickets;
+        long closedOrResolved = resolvedTickets + closedTickets;
+        double resolutionRate = totalTickets == 0 ? 0.0 : ((double) closedOrResolved / totalTickets) * 100;
+
+        double avgResolutionTime = resolutionTimes.stream()
+                .mapToLong(Long::longValue)
+                .average()
+                .orElse(0.0);
+
+        double satisfactionRate = satisfactionRatings.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0.0);
+
+        // Build response
+        return TicketStatisticsResponse.builder()
+                .period(periodType)
+                .periodLabel(periodLabel)
+                .startDate(startDate)
+                .endDate(endDate)
+                .totalTickets(totalTickets)
+                .newTickets(newTickets)
+                .inProgressTickets(inProgressTickets)
+                .resolvedTickets(resolvedTickets)
+                .closedTickets(closedTickets)
+                .escalatedTickets(escalatedTickets)
+                .openTickets(openTickets)
+                .resolutionRate(resolutionRate)
+                .averageResolutionTimeHours(avgResolutionTime)
+                .satisfactionRate(satisfactionRate)
+                .ticketsByPriority(ticketsByPriority)
+                .ticketsByCategory(ticketsByCategory)
+                .ticketsBySource(ticketsBySource)
+                .ticketsByAssignee(ticketsByAssignee)
+                .ticketsByCreator(ticketsByCreator)
+                .totalSatisfactionScore(satisfactionRatings.stream().mapToInt(Integer::intValue).sum())
+                .totalSatisfactionRatings((long) satisfactionRatings.size())
+                .averageResponseTimeHours(0.0) // You can implement this separately
+                .overdueTickets(0L) // You can implement this separately
+                .build();
+    }
+
+    private Map<String, Long> getTicketsGroupedByPriority() {
+        Map<String, Long> priorityCounts = new HashMap<>();
+        for (Priority priority : Priority.values()) {
+            long count = ticketRepository.findAll().stream()
+                    .filter(t -> t.getPriority() == priority)
+                    .count();
+            priorityCounts.put(priority.name(), count);
+        }
+        return priorityCounts;
+    }
+
+    private Map<String, Long> getTicketsGroupedByCategory() {
+        // This would be more efficient with a custom query
+        // For now, let's get all tickets and group
+        Map<String, Long> categoryCounts = new HashMap<>();
+        List<Ticket> allTickets = ticketRepository.findAll();
+
+        for (Ticket ticket : allTickets) {
+            if (ticket.getCategory() != null) {
+                categoryCounts.merge(ticket.getCategory().name(), 1L, Long::sum);
+            }
+        }
+        return categoryCounts;
+    }
+
+    private Double calculateAverageResponseTime() {
+        // This would typically be a custom query in your repository
+        // For now, return a default value
+        return 0.0;
+    }
+
+
 }

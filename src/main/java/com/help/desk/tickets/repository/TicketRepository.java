@@ -56,5 +56,32 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                                         @Param("endDate") LocalDateTime endDate,
                                         Pageable pageable);
 
+
+    @Query("""
+        SELECT COUNT(t) FROM Ticket t
+        WHERE t.createdAt BETWEEN :startDate AND :endDate
+    """)
+    Long countTicketsByDateRange(@Param("startDate") LocalDateTime startDate,
+                                    @Param("endDate") LocalDateTime endDate);
+
+
+    @Query("""
+        SELECT COUNT(t) FROM Ticket t
+        WHERE t.createdAt BETWEEN :resolvedAt AND :endDate
+    """)
+    Long countResolvedTicketsByDateRange(@Param("resolvedAt") LocalDateTime startDate,
+                                        @Param("endDate") LocalDateTime endDate);
+
+    @Query("SELECT AVG(TIMESTAMPDIFF(HOUR, t.createdAt, t.resolvedAt)) FROM Ticket t "
+            +
+           "WHERE t.resolvedAt BETWEEN :startDate AND :endDate AND t.status = 'RESOLVED'")
+    Double getAverageResolutionTime(@Param("startDate") LocalDateTime startDate,
+                                    @Param("endDate") LocalDateTime endDate);
+
+    @Query("SELECT COUNT(t) FROM Ticket t WHERE t.escalationLevel > 0 AND t.createdAt BETWEEN :startDate AND :endDate")
+    Long countEscalatedTickets(@Param("startDate") LocalDateTime startDate,
+                                        @Param("endDate") LocalDateTime endDate);
+
+
 }
 
