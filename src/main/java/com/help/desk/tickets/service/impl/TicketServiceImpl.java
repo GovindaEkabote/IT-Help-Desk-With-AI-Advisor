@@ -502,12 +502,42 @@ public class TicketServiceImpl  implements TicketService {
     }
 
     @Override
-    public List<TicketStatisticsResponse> getDailyStatisticsForRange(LocalDateTime startDate, LocalDateTime endDate) {
-        return List.of();
+    public List<TicketStatisticsResponse> getDailyStatisticsForRange(
+            LocalDateTime startDate,
+            LocalDateTime endDate) {
+        if (startDate == null || endDate == null) {
+            throw new IllegalArgumentException("Start date and end date cannot be null");
+        }
+        if (startDate.isAfter(endDate)) {
+            throw new IllegalArgumentException("Start date must be before end date");
+        }
+        List<TicketStatisticsResponse> dailyStats = new ArrayList<>();
+        LocalDateTime currentDate = startDate.withHour(0).withMinute(0).withSecond(0).withNano(0);
+        LocalDateTime endOfRange = endDate.withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        while (!currentDate.isAfter(endOfRange.toLocalDate().atStartOfDay())) {
+            LocalDateTime startOfDay = currentDate;
+            LocalDateTime endOfDay = currentDate.withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+            TicketStatisticsResponse stats = calculateStatistics(startOfDay, endOfDay, "DAY", currentDate.toString());
+            dailyStats.add(stats);
+
+            currentDate = currentDate.plusDays(1);
+        }
+
+        return dailyStats;
     }
 
     @Override
     public TicketStatisticsResponse getWeeklyStatistics(int year, int week) {
+        // Validate inputs
+        if (year < 2020 || year > 2100) {
+            throw new IllegalArgumentException("Invalid year: " + year);
+        }
+        if (week < 1 || week > 53) {
+            throw new IllegalArgumentException("Invalid week number: " + week);
+        }
+
         return null;
     }
 

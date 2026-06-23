@@ -259,3 +259,291 @@
 2026-06-23T21:28:46.369+05:30  INFO 7600 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-23T21:28:46.380+05:30  INFO 7600 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-23T21:28:46.418+05:30  INFO 7600 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T21:28:54.108+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 18956 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-23T21:28:54.116+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-23T21:28:55.616+05:30  INFO 18956 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23T21:28:55.748+05:30  INFO 18956 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2026-06-23T21:28:56.884+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-23T21:28:56.905+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T21:28:56.906+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23T21:28:57.007+05:30  INFO 18956 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2807 ms
+2026-06-23T21:28:57.305+05:30  INFO 18956 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T21:28:57.412+05:30  INFO 18956 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23T21:28:58.114+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23T21:28:58.168+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T21:28:58.761+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c91a008
+2026-06-23T21:28:58.763+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T21:28:58.870+05:30  WARN 18956 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-23T21:28:58.912+05:30  INFO 18956 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T21:29:00.354+05:30  INFO 18956 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T21:29:00.534+05:30  INFO 18956 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T21:29:00.665+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23T21:29:01.099+05:30  INFO 18956 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-23T21:29:02.390+05:30  WARN 18956 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T21:29:02.924+05:30 DEBUG 18956 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 42 mappings in 'requestMappingHandlerMapping'
+2026-06-23T21:29:02.983+05:30 DEBUG 18956 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-23T21:29:03.035+05:30 DEBUG 18956 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-23T21:29:03.103+05:30 DEBUG 18956 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-23T21:29:03.402+05:30  INFO 18956 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
+2026-06-23T21:29:03.412+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 10.063 seconds (process running for 10.677)
+2026-06-23T21:29:03.417+05:30  INFO 18956 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
+2026-06-23T21:29:10.477+05:30  INFO 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T21:29:10.479+05:30  INFO 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-23T21:29:10.479+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-23T21:29:10.479+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-23T21:29:10.484+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6407c1b3
+2026-06-23T21:29:10.486+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@f07d169
+2026-06-23T21:29:10.490+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-23T21:29:10.491+05:30  INFO 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2026-06-23T21:29:10.991+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/ticket/create", parameters={}
+2026-06-23T21:29:11.001+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#createTicket(TicketRequest)
+2026-06-23T21:29:11.189+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TicketRequest(title=Laptop not working, description=My laptop won't start, priority=HIGH, category=H (truncated)...]
+2026-06-23T21:29:11.561+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:29:11.579+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TicketResponse(id=8, totalTickets=null, ticketNumber=TK-1782230351375, title=Laptop not working, des (truncated)...]
+2026-06-23T21:29:11.664+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:29:35.600+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
+2026-06-23T21:29:35.601+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
+2026-06-23T21:29:35.652+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:29:35.655+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-23T21:29:35.650112100, status=200, success=true, message=Logout succes (truncated)...]
+2026-06-23T21:29:35.659+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:29:51.780+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
+2026-06-23T21:29:51.781+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
+2026-06-23T21:29:51.783+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@64f72efc]
+2026-06-23T21:29:51.995+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:29:51.998+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@4e98428e]
+2026-06-23T21:29:52.001+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:30:04.418+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily", parameters={}
+2026-06-23T21:30:04.418+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatistics(LocalDate)
+2026-06-23T21:30:04.479+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:30:04.480+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TicketStatisticsResponse(period=DAY, periodLabel=2026-06-23T21:30:04.425442600, startDate=2026-06-23 (truncated)...]
+2026-06-23T21:30:04.500+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:30:34.243+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
+2026-06-23T21:30:34.243+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
+2026-06-23T21:30:34.260+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:30:34.260+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-23T21:30:34.259302700, status=200, success=true, message=Logout succes (truncated)...]
+2026-06-23T21:30:34.261+05:30 DEBUG 18956 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:51:57.413+05:30  INFO 18956 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23T21:51:57.516+05:30  INFO 18956 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-23T21:51:57.556+05:30  INFO 18956 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T21:51:57.590+05:30  INFO 18956 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T21:51:57.600+05:30  INFO 18956 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T21:52:06.666+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 24888 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-23T21:52:06.672+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-23T21:52:08.282+05:30  INFO 24888 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23T21:52:08.433+05:30  INFO 24888 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 4 JPA repository interfaces.
+2026-06-23T21:52:09.538+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-23T21:52:09.562+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T21:52:09.562+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23T21:52:09.661+05:30  INFO 24888 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2845 ms
+2026-06-23T21:52:10.025+05:30  INFO 24888 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T21:52:10.127+05:30  INFO 24888 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23T21:52:10.903+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23T21:52:10.992+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T21:52:11.500+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c91a008
+2026-06-23T21:52:11.502+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T21:52:11.651+05:30  WARN 24888 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-23T21:52:11.686+05:30  INFO 24888 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T21:52:13.369+05:30  INFO 24888 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T21:52:13.622+05:30  INFO 24888 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T21:52:13.714+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23T21:52:14.095+05:30  INFO 24888 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-23T21:52:15.437+05:30  WARN 24888 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T21:52:16.085+05:30 DEBUG 24888 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 43 mappings in 'requestMappingHandlerMapping'
+2026-06-23T21:52:16.144+05:30 DEBUG 24888 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-23T21:52:16.206+05:30 DEBUG 24888 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-23T21:52:16.289+05:30 DEBUG 24888 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-23T21:52:16.654+05:30  INFO 24888 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
+2026-06-23T21:52:16.664+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 10.727 seconds (process running for 11.401)
+2026-06-23T21:52:16.669+05:30  INFO 24888 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
+2026-06-23T21:52:49.921+05:30  INFO 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T21:52:49.927+05:30  INFO 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-23T21:52:49.928+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-23T21:52:49.929+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-23T21:52:49.936+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6407c1b3
+2026-06-23T21:52:49.937+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@f07d169
+2026-06-23T21:52:49.939+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-23T21:52:49.947+05:30  INFO 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2026-06-23T21:52:58.282+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
+2026-06-23T21:52:58.306+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
+2026-06-23T21:52:58.482+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@57c68422]
+2026-06-23T21:52:59.635+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:52:59.637+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@16d2a730]
+2026-06-23T21:52:59.708+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T21:53:15.355+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/statistics/daily-range", parameters={}
+2026-06-23T21:53:15.359+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-23T21:53:15.366+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [ticket/statistics/statistics/daily-range]
+2026-06-23T21:53:15.370+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
+2026-06-23T21:53:15.373+05:30 ERROR 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: No static resource ticket/statistics/statistics/daily-range for request '/api/v1/hele-desk/ticket/statistics/statistics/daily-range'.
+2026-06-23T21:53:15.379+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:53:15.389+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-23T21:53:15.373189500, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
+2026-06-23T21:53:15.411+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ticket/statistics/statistics/daily-range for request '/api/v1/hele-desk/ticket/statistics/statistics/daily-range'.]
+2026-06-23T21:53:15.413+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-23T21:53:34.011+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily-range", parameters={}
+2026-06-23T21:53:34.012+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatisticsForRange(LocalDate, LocalDate)
+2026-06-23T21:53:34.022+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.help.desk.tickets.dto.response.TicketStatisticsResponse>> com.help.desk.tickets.controller.TicketController.getDailyStatisticsForRange(java.time.LocalDate,java.time.LocalDate): Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:53:34.025+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
+2026-06-23T21:53:34.025+05:30 ERROR 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:53:34.026+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:53:34.026+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-23T21:53:34.025955700, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
+2026-06-23T21:53:34.028+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-06-23T21:53:34.032+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-23T21:54:13.424+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily-range", parameters={}
+2026-06-23T21:54:13.428+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatisticsForRange(LocalDate, LocalDate)
+2026-06-23T21:54:13.430+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.help.desk.tickets.dto.response.TicketStatisticsResponse>> com.help.desk.tickets.controller.TicketController.getDailyStatisticsForRange(java.time.LocalDate,java.time.LocalDate): Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:54:13.432+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
+2026-06-23T21:54:13.434+05:30 ERROR 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:54:13.437+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:54:13.437+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-23T21:54:13.434946, status=500, error=INTERNAL_SERVER_ERROR, message=Some (truncated)...]
+2026-06-23T21:54:13.441+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-06-23T21:54:13.462+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-23T21:54:23.587+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily-range", parameters={}
+2026-06-23T21:54:23.588+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatisticsForRange(LocalDate, LocalDate)
+2026-06-23T21:54:23.590+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.help.desk.tickets.dto.response.TicketStatisticsResponse>> com.help.desk.tickets.controller.TicketController.getDailyStatisticsForRange(java.time.LocalDate,java.time.LocalDate): Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:54:23.591+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
+2026-06-23T21:54:23.591+05:30 ERROR 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: Required request parameter 'startDate' for method parameter type LocalDate is not present
+2026-06-23T21:54:23.592+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:54:23.592+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-23T21:54:23.591750400, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
+2026-06-23T21:54:23.593+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-06-23T21:54:23.595+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-23T21:57:47.274+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily-range?startDate=2026-06-20%2001:14:50.690178&endDate=%202026-06-23%2021:29:11.385472", parameters={masked}
+2026-06-23T21:57:47.282+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatisticsForRange(LocalDate, LocalDate)
+2026-06-23T21:57:47.412+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.help.desk.tickets.dto.response.TicketStatisticsResponse>> com.help.desk.tickets.controller.TicketController.getDailyStatisticsForRange(java.time.LocalDate,java.time.LocalDate): Method parameter 'startDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [2026-06-20 01:14:50.690178]
+2026-06-23T21:57:47.416+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
+2026-06-23T21:57:47.417+05:30 ERROR 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: Method parameter 'startDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [2026-06-20 01:14:50.690178]
+2026-06-23T21:57:47.421+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:57:47.424+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-23T21:57:47.417828800, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
+2026-06-23T21:57:47.431+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'startDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [2026-06-20 01:14:50.690178]]
+2026-06-23T21:57:47.433+05:30 DEBUG 24888 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-23T21:58:51.129+05:30  INFO 24888 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23T21:58:51.222+05:30  INFO 24888 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-23T21:58:51.253+05:30  INFO 24888 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T21:58:51.285+05:30  INFO 24888 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T21:58:51.330+05:30  INFO 24888 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T21:59:00.977+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 2988 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-23T21:59:00.985+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-23T21:59:05.674+05:30  INFO 2988 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23T21:59:05.852+05:30  INFO 2988 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 4 JPA repository interfaces.
+2026-06-23T21:59:07.975+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-23T21:59:08.013+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T21:59:08.014+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23T21:59:08.370+05:30  INFO 2988 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6970 ms
+2026-06-23T21:59:08.867+05:30  INFO 2988 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T21:59:08.997+05:30  INFO 2988 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23T21:59:10.124+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23T21:59:10.198+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T21:59:11.080+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a0d2c80
+2026-06-23T21:59:11.083+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T21:59:11.203+05:30  WARN 2988 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-23T21:59:11.273+05:30  INFO 2988 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T21:59:13.407+05:30  INFO 2988 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T21:59:13.723+05:30  INFO 2988 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T21:59:13.897+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23T21:59:14.530+05:30  INFO 2988 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-23T21:59:16.724+05:30  WARN 2988 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T21:59:17.599+05:30 DEBUG 2988 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 43 mappings in 'requestMappingHandlerMapping'
+2026-06-23T21:59:17.698+05:30 DEBUG 2988 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-23T21:59:17.769+05:30 DEBUG 2988 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-23T21:59:17.907+05:30 DEBUG 2988 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-23T21:59:18.437+05:30  INFO 2988 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
+2026-06-23T21:59:18.453+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 18.527 seconds (process running for 19.518)
+2026-06-23T21:59:18.462+05:30  INFO 2988 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
+2026-06-23T21:59:24.834+05:30  INFO 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T21:59:24.835+05:30  INFO 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-23T21:59:24.836+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-23T21:59:24.836+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-23T21:59:24.843+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2465e8be
+2026-06-23T21:59:24.848+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5354b0bc
+2026-06-23T21:59:24.850+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-23T21:59:24.851+05:30  INFO 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2026-06-23T21:59:25.511+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/ticket/statistics/daily-range?startDate=2026-06-20T01:14:50&endDate=2026-06-23T21:29:11", parameters={masked}
+2026-06-23T21:59:25.526+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.TicketController#getDailyStatisticsForRange(LocalDateTime, LocalDateTime)
+2026-06-23T21:59:25.840+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T21:59:25.905+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TicketStatisticsResponse(period=DAY, periodLabel=2026-06-20T00:00, startDate=2026-06-20T00:00, endD (truncated)...]
+2026-06-23T21:59:26.139+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T22:00:04.637+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
+2026-06-23T22:00:04.639+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
+2026-06-23T22:00:04.898+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-23T22:00:04.905+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-23T22:00:04.859930900, status=200, success=true, message=Logout succes (truncated)...]
+2026-06-23T22:00:04.919+05:30 DEBUG 2988 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-23T22:00:54.221+05:30  INFO 2988 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23T22:00:54.290+05:30  INFO 2988 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-23T22:00:54.319+05:30  INFO 2988 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T22:00:54.330+05:30  INFO 2988 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T22:00:54.379+05:30  INFO 2988 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T22:01:01.497+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 23492 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-23T22:01:01.503+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-23T22:01:03.174+05:30  INFO 23492 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23T22:01:03.279+05:30  INFO 23492 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+2026-06-23T22:01:04.470+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-23T22:01:04.494+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T22:01:04.495+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23T22:01:04.598+05:30  INFO 23492 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3022 ms
+2026-06-23T22:01:04.918+05:30  INFO 23492 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T22:01:05.039+05:30  INFO 23492 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23T22:01:05.732+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23T22:01:05.798+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T22:01:06.334+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c91a008
+2026-06-23T22:01:06.337+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T22:01:06.426+05:30  WARN 23492 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-23T22:01:06.453+05:30  INFO 23492 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T22:01:08.150+05:30  INFO 23492 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T22:01:08.375+05:30  INFO 23492 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T22:01:08.466+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23T22:01:08.841+05:30  INFO 23492 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-23T22:01:10.509+05:30  WARN 23492 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T22:01:11.139+05:30 DEBUG 23492 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 44 mappings in 'requestMappingHandlerMapping'
+2026-06-23T22:01:11.202+05:30 DEBUG 23492 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-23T22:01:11.260+05:30 DEBUG 23492 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-23T22:01:11.326+05:30 DEBUG 23492 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-23T22:01:11.648+05:30  INFO 23492 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
+2026-06-23T22:01:11.658+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 10.909 seconds (process running for 11.489)
+2026-06-23T22:01:11.664+05:30  INFO 23492 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
+2026-06-23T22:06:25.439+05:30  INFO 23492 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23T22:06:25.582+05:30  INFO 23492 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-23T22:06:25.634+05:30  INFO 23492 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23T22:06:25.685+05:30  INFO 23492 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T22:06:25.763+05:30  INFO 23492 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

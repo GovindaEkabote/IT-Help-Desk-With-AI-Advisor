@@ -220,4 +220,39 @@ public class TicketController {
         TicketStatisticsResponse stats = ticketService.getDailyStatistics(dateTime);
         return ResponseEntity.ok(stats);
     }
+
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/daily-range")
+    public ResponseEntity<List<TicketStatisticsResponse>> getDailyStatisticsForRange(
+            @RequestParam("startDate")
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime startDate,
+
+            @RequestParam("endDate")
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime endDate
+    ) {
+        List<TicketStatisticsResponse> stats = ticketService.getDailyStatisticsForRange(startDate, endDate);
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/daily-range/{startDate}/{endDate}")
+    public ResponseEntity<List<TicketStatisticsResponse>> getDailyStatisticsForRange(
+            @PathVariable("startDate")
+            @DateTimeFormat(pattern = "yyyy-MM-dd")
+            LocalDate startDate,
+
+            @PathVariable("endDate")
+            @DateTimeFormat(pattern = "yyyy-MM-dd")
+            LocalDate endDate
+    ) {
+        LocalDateTime startDateTime = startDate.atStartOfDay();
+        LocalDateTime endDateTime = endDate.atTime(23, 59, 59);
+
+        List<TicketStatisticsResponse> stats = ticketService.getDailyStatisticsForRange(startDateTime, endDateTime);
+        return ResponseEntity.ok(stats);
+    }
+
  }
