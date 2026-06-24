@@ -5,6 +5,7 @@ import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
 import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
 import com.help.desk.tickets.service.TicketService;
+import com.help.desk.user.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -253,6 +254,85 @@ public class TicketController {
 
         List<TicketStatisticsResponse> stats = ticketService.getDailyStatisticsForRange(startDateTime, endDateTime);
         return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/weekly")
+    public ResponseEntity<TicketStatisticsResponse> getWeeklyStatistics(
+            @RequestParam int year,
+            @RequestParam int week
+    ) {
+        TicketStatisticsResponse stats = ticketService.getWeeklyStatistics(year, week);
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/weekly-range")
+    public ResponseEntity<List<TicketStatisticsResponse>> getWeeklyStatisticsForRange(
+            @RequestParam int startYear,
+            @RequestParam int startWeek,
+            @RequestParam int endYear,
+            @RequestParam int endWeek
+    ) {
+        List<TicketStatisticsResponse> stats = ticketService.getWeeklyStatisticsForRange(
+                startYear, startWeek, endYear, endWeek
+        );
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/monthly")
+    public ResponseEntity<TicketStatisticsResponse> getMonthlyStatistics(
+            @RequestParam int year,
+            @RequestParam int month
+    ) {
+        TicketStatisticsResponse stats = ticketService.getMonthlyStatistics(year, month);
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/monthly-range")
+    public ResponseEntity<List<TicketStatisticsResponse>> getMonthlyStatisticsForRange(
+            @RequestParam int startYear,
+            @RequestParam int startMonth,
+            @RequestParam int endYear,
+            @RequestParam int endMonth
+    ) {
+        List<TicketStatisticsResponse> stats = ticketService.getMonthlyStatisticsForRange(
+                startYear, startMonth, endYear, endMonth
+        );
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN', 'MANAGER')")
+    @GetMapping("/statistics/last-six-months")
+    public ResponseEntity<List<TicketStatisticsResponse>> getLastSixMonthsStatistics() {
+        List<TicketStatisticsResponse> stats = ticketService.getLastSixMonthsStatistics();
+        return ResponseEntity.ok(stats);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
+    @GetMapping("/statistics/dashboard")
+    public ResponseEntity<Map<String, Object>> getAdminDashboardSummary() {
+        Map<String, Object> dashboard = ticketService.getAdminDashboardSummary();
+        return ResponseEntity.ok(dashboard);
+    }
+
+    // Additional user-specific endpoints
+
+    @GetMapping("/my-tickets/pending")
+    public ResponseEntity<Page<TicketResponse>> getMyPendingTickets(Pageable pageable) {
+//        User currentUser = // get current user
+        return ResponseEntity.ok(ticketService.getPendingTicketsByUser(authService.getCurrentUser().getId(), pageable));
+    }
+
+    @GetMapping("/user/{userId}/statistics")
+    public ResponseEntity<Map<String, Object>> getUserTicketStatistics(
+            @PathVariable Long userId,
+            Pageable pageable
+    ) {
+        Map<String, Object> statistics = ticketService.getUserTicketStatistics(userId, pageable);
+        return ResponseEntity.ok(statistics);
     }
 
  }

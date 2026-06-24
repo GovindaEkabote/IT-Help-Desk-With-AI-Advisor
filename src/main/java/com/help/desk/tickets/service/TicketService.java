@@ -46,7 +46,7 @@ public interface TicketService {
     List<TicketStatisticsResponse> getDailyStatisticsForRange(LocalDateTime startDate, LocalDateTime endDate);
 
     // Weekly statistics
-    TicketStatisticsResponse getWeeklyStatistics(int year, int week);
+    TicketStatisticsResponse   getWeeklyStatistics(int year, int week);
     List<TicketStatisticsResponse> getWeeklyStatisticsForRange(int startYear, int startWeek, int endYear, int endWeek);
 
     // Monthly statistics

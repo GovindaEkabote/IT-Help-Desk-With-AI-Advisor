@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.temporal.WeekFields;
 import java.util.*;
 
 @Service
@@ -537,33 +538,199 @@ public class TicketServiceImpl  implements TicketService {
         if (week < 1 || week > 53) {
             throw new IllegalArgumentException("Invalid week number: " + week);
         }
+        // Get first day of the week (Monday)
+        LocalDateTime startOfWeek = LocalDateTime.now()
+                .withYear(year)
+                .with(WeekFields.ISO.weekOfYear(), week)
+                .with(WeekFields.ISO.dayOfWeek(), 1)
+                .withHour(0).withMinute(0).withSecond(59).withNano(0);
 
-        return null;
+        // Get last day of the week (Sunday)
+        LocalDateTime endOfWeek = startOfWeek.plusDays(6)
+                .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        String periodLabel = "Week " + week + ", " + year;
+        return calculateStatistics(startOfWeek, endOfWeek, "WEEK", periodLabel);
     }
 
     @Override
     public List<TicketStatisticsResponse> getWeeklyStatisticsForRange(int startYear, int startWeek, int endYear, int endWeek) {
-        return List.of();
+        // Validate inputs
+        if (startYear > endYear || (startYear == endYear && startWeek > endWeek)) {
+            throw new IllegalArgumentException("Start date must be before end date");
+        }
+
+        List<TicketStatisticsResponse> weeklyStats = new ArrayList<>();
+
+        LocalDateTime currentStart = LocalDateTime.now()
+                .withYear(startYear)
+                .with(WeekFields.ISO.weekOfYear(), startWeek)
+                .with(WeekFields.ISO.dayOfWeek(), 1)
+                .withHour(0).withMinute(0).withSecond(0).withNano(0);
+
+        LocalDateTime endOfRange = LocalDateTime.now()
+                .withYear(endYear)
+                .with(WeekFields.ISO.weekOfYear(), endWeek)
+                .with(WeekFields.ISO.dayOfWeek(), 7)
+                .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        while (!currentStart.isAfter(endOfRange)) {
+            LocalDateTime endOfWeek = currentStart.plusDays(6)
+                    .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+            int weekNum = currentStart.get(WeekFields.ISO.weekOfYear());
+            int year = currentStart.getYear();
+            String periodLabel = "Week " + weekNum + ", " + year;
+
+            TicketStatisticsResponse stats = calculateStatistics(currentStart, endOfWeek, "WEEK", periodLabel);
+            weeklyStats.add(stats);
+
+            currentStart = currentStart.plusWeeks(1);
+        }
+
+        return weeklyStats;
     }
 
     @Override
     public TicketStatisticsResponse getMonthlyStatistics(int year, int month) {
-        return null;
+        // Validate inputs
+        if (year < 2020 || year > 2100) {
+            throw new IllegalArgumentException("Invalid year: " + year);
+        }
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException("Invalid month: " + month);
+        }
+
+        LocalDateTime startOfMonth = LocalDateTime.of(year, month, 1, 0, 0, 0);
+        LocalDateTime endOfMonth = startOfMonth
+                .withMonth(month)
+                .withDayOfMonth(startOfMonth.getMonth().length(startOfMonth.toLocalDate().isLeapYear()))
+                .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        String monthName = startOfMonth.getMonth().toString();
+        String periodLabel = monthName + " " + year;
+
+        return calculateStatistics(startOfMonth, endOfMonth, "MONTH", periodLabel);
     }
 
     @Override
     public List<TicketStatisticsResponse> getMonthlyStatisticsForRange(int startYear, int startMonth, int endYear, int endMonth) {
-        return List.of();
+        // Validate inputs
+        if (startYear > endYear || (startYear == endYear && startMonth > endMonth)) {
+            throw new IllegalArgumentException("Start date must be before end date");
+        }
+
+        List<TicketStatisticsResponse> monthlyStats = new ArrayList<>();
+
+        LocalDateTime currentStart = LocalDateTime.of(startYear, startMonth, 1, 0, 0, 0);
+        LocalDateTime endOfRange = LocalDateTime.of(endYear, endMonth, 1, 0, 0, 0)
+                .withDayOfMonth(LocalDateTime.of(endYear, endMonth, 1, 0, 0, 0)
+                        .getMonth().length(LocalDateTime.of(endYear, endMonth, 1, 0, 0, 0)
+                                .toLocalDate().isLeapYear()))
+                .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+        while (!currentStart.isAfter(endOfRange)) {
+            LocalDateTime endOfMonth = currentStart
+                    .withDayOfMonth(currentStart.getMonth().length(currentStart.toLocalDate().isLeapYear()))
+                    .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+            String monthName = currentStart.getMonth().toString();
+            int year = currentStart.getYear();
+            String periodLabel = monthName + " " + year;
+
+            TicketStatisticsResponse stats = calculateStatistics(currentStart, endOfMonth, "MONTH", periodLabel);
+            monthlyStats.add(stats);
+
+            currentStart = currentStart.plusMonths(1);
+        }
+
+        return monthlyStats;
     }
 
     @Override
     public List<TicketStatisticsResponse> getLastSixMonthsStatistics() {
-        return List.of();
+
+        List<TicketStatisticsResponse> monthlyStats = new ArrayList<>();
+        LocalDateTime currentDate = LocalDateTime.now();
+
+        // Go back 6 months
+        for (int i = 5; i >= 0; i--) {
+            LocalDateTime monthStart = currentDate.minusMonths(i)
+                    .withDayOfMonth(1)
+                    .withHour(0).withMinute(0).withSecond(0).withNano(0);
+
+            LocalDateTime monthEnd = monthStart
+                    .withDayOfMonth(monthStart.getMonth().length(monthStart.toLocalDate().isLeapYear()))
+                    .withHour(23).withMinute(59).withSecond(59).withNano(999999999);
+
+            String monthName = monthStart.getMonth().toString();
+            int year = monthStart.getYear();
+            String periodLabel = monthName + " " + year;
+
+            TicketStatisticsResponse stats = calculateStatistics(monthStart, monthEnd, "MONTH", periodLabel);
+            monthlyStats.add(stats);
+        }
+
+        return monthlyStats;
     }
 
     @Override
     public Map<String, Object> getAdminDashboardSummary() {
-        return Map.of();
+
+        User currentUser = authService.getCurrentUser();
+
+        // Check if user has admin access
+        boolean isAdmin = currentUser.getRole() == UserRole.SUPER_ADMIN ||
+                currentUser.getRole() == UserRole.ADMIN;
+
+        if (!isAdmin) {
+            throw new AccessDeniedException("Only administrators can access the dashboard summary");
+        }
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime startOfToday = now.withHour(0).withMinute(0).withSecond(0).withNano(0);
+        LocalDateTime startOfWeek = now.minusDays(7);
+        LocalDateTime startOfMonth = now.withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
+
+        // Get statistics for different periods
+        TicketStatisticsResponse todayStats = calculateStatistics(startOfToday, now, "DAY", "Today");
+        TicketStatisticsResponse weekStats = calculateStatistics(startOfWeek, now, "WEEK", "Last 7 Days");
+        TicketStatisticsResponse monthStats = calculateStatistics(startOfMonth, now, "MONTH", "This Month");
+
+        // Additional metrics
+        long totalTickets = ticketRepository.count();
+        long openTickets = ticketRepository.countByStatus(Status.NEW) +
+                ticketRepository.countByStatus(Status.ASSIGNED) +
+                ticketRepository.countByStatus(Status.IN_PROGRESS);
+        long resolvedTickets = ticketRepository.countByStatus(Status.RESOLVED);
+        long closedTickets = ticketRepository.countByStatus(Status.CLOSED);
+        long escalatedTickets = ticketRepository.countByStatus(Status.ESCALATED);
+
+        // Get tickets by priority
+        Map<String, Long> ticketsByPriority = getTicketsGroupedByPriority();
+
+        // Get tickets by category
+        Map<String, Long> ticketsByCategory = getTicketsGroupedByCategory();
+
+        // Get average response time (you might need to add this to your repository)
+        Double avgResponseTime = calculateAverageResponseTime();
+
+        // Build dashboard summary
+        Map<String, Object> dashboard = new HashMap<>();
+        dashboard.put("totalTickets", totalTickets);
+        dashboard.put("openTickets", openTickets);
+        dashboard.put("resolvedTickets", resolvedTickets);
+        dashboard.put("closedTickets", closedTickets);
+        dashboard.put("escalatedTickets", escalatedTickets);
+        dashboard.put("todayStats", todayStats);
+        dashboard.put("weekStats", weekStats);
+        dashboard.put("monthStats", monthStats);
+        dashboard.put("ticketsByPriority", ticketsByPriority);
+        dashboard.put("ticketsByCategory", ticketsByCategory);
+        dashboard.put("averageResponseTimeHours", avgResponseTime != null ? avgResponseTime : 0.0);
+        dashboard.put("timestamp", LocalDateTime.now());
+
+        return dashboard;
     }
 
 
@@ -753,6 +920,4 @@ public class TicketServiceImpl  implements TicketService {
         // For now, return a default value
         return 0.0;
     }
-
-
 }
