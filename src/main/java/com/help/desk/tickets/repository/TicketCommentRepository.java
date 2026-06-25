@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -33,8 +34,11 @@ public interface TicketCommentRepository extends JpaRepository<TicketComment, Lo
             @Param("ticketId") Long ticketId, Pageable pageable
     );
 
+
     List<TicketComment> findByCreatedAtBetween(
             LocalDateTime startDate,
             LocalDateTime endDate
     );
+
+    List<TicketComment> findPublicCommentsByTicketId(Long ticketId);
 }

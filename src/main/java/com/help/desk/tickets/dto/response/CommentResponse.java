@@ -1,5 +1,6 @@
 package com.help.desk.tickets.dto.response;
 
+import com.help.desk.tickets.enums.CommentType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +21,11 @@ public class CommentResponse {
     private Long commentedById;
     private String commentedByName;
     private String commentedByEmail;
+    private String commentedByRole;
+    private CommentType commentType;
+    private Boolean isInternal;
     private LocalDateTime createdAt;
     private String timeAgo;
+    private Boolean canDelete;
+    private Boolean canEdit;
 }

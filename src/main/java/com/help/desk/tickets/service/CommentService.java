@@ -13,21 +13,30 @@ public interface CommentService {
     CommentResponse addComment(CommentRequest commentRequest);
 
     // Get comments for a ticket
-    List<CommentResponse>  getCommentsByTicketId(Long ticketId);
-    Page<CommentResponse> getCommentsByTicketId(Long ticketId, Pageable  pageable);
+    List<CommentResponse>  getCommentsByTicketId(Long ticketId , Long userId);
+    Page<CommentResponse> getCommentsByTicketId(Long ticketId,Long userId, Pageable  pageable);
 
     // Get comments by user
     List<CommentResponse> getCommentsByUserId(Long userId);
 
     // Get latest comments for dashboard
-    List<CommentResponse> getLatestComments(int limit);
+    List<CommentResponse> getLatestComments(int limit, Long userId);
 
     // Update comment
-    CommentResponse updateComment(Long commentId, String newComment);
+    CommentResponse updateComment(Long commentId, String newComment, Long userId);
 
     // Delete comment
-    void deleteComment(Long commentId);
+    void deleteComment(Long commentId, Long userId);
+
+    // Get public comments only
+    List<CommentResponse> getPublicComments(Long ticketId);
 
     // Count comments for a ticket
     long countCommentsByTicketId(Long ticketId);
+
+    // Get internal comments only (support team)
+    List<CommentResponse> getInternalComments(Long ticketId);
+
+    // Convert comment to internal
+    CommentResponse convertToInternal(Long commentId, Long userId);
 }
