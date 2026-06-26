@@ -1,7 +1,5 @@
 package com.help.desk.exception;
 
-import ch.qos.logback.core.model.processor.ModelHandlerException;
-import com.help.desk.AiHelpDeskApplication;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,5 +131,22 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
     }
+
+    @ExceptionHandler(TooManyRequestsException.class)
+    public  ResponseEntity<ErrorResponse> handleTooManyRequests(
+            TooManyRequestsException ex
+    ){
+        ErrorResponse errorResponse = new ErrorResponse(
+                HttpStatus.TOO_MANY_REQUESTS.value(),
+                HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase(),
+                ex.getMessage()
+        );
+        return ResponseEntity
+                .status(HttpStatus.TOO_MANY_REQUESTS)
+                .body(errorResponse);
+
+    }
+
+
 
 }

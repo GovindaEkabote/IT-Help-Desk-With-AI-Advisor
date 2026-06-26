@@ -1,19 +1,29 @@
-2026-06-25T16:59:14.365+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 3692 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-25T16:59:14.382+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-25T16:59:15.947+05:30  INFO 3692 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-25T16:59:16.078+05:30  INFO 3692 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 6 JPA repository interfaces.
-2026-06-25T16:59:17.134+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-25T16:59:17.155+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-25T16:59:17.155+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-06-25T16:59:17.247+05:30  INFO 3692 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2760 ms
-2026-06-25T16:59:17.538+05:30  INFO 3692 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-25T16:59:17.638+05:30  INFO 3692 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-06-25T16:59:18.318+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-25T16:59:18.371+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-25T16:59:18.978+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37665305
-2026-06-25T16:59:18.981+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-25T16:59:19.108+05:30  WARN 3692 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-25T16:59:19.140+05:30  INFO 3692 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-06-26T14:03:41.860+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 6224 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-26T14:03:41.891+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-26T14:03:45.889+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-26T14:03:45.892+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T14:03:47.238+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 606 ms. Found 6 JPA repository interfaces.
+2026-06-26T14:03:47.359+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-26T14:03:47.361+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-26T14:03:47.424+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.428+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.428+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.429+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.429+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.432+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:03:47.432+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+2026-06-26T14:03:49.811+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-26T14:03:49.850+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T14:03:49.856+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-26T14:03:50.140+05:30  INFO 6224 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8101 ms
+2026-06-26T14:03:50.719+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-26T14:03:50.845+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-26T14:03:51.905+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T14:03:51.974+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T14:03:52.825+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@361483eb
+2026-06-26T14:03:52.829+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T14:03:53.178+05:30  WARN 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T14:03:53.312+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -25,143 +35,96 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-25T16:59:20.638+05:30  INFO 3692 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-25T16:59:20.883+05:30  INFO 3692 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-25T16:59:21.109+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-25T16:59:21.518+05:30  INFO 3692 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-25T16:59:22.989+05:30  WARN 3692 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-25T16:59:23.485+05:30 DEBUG 3692 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-25T16:59:23.532+05:30 DEBUG 3692 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-25T16:59:23.579+05:30 DEBUG 3692 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-25T16:59:23.646+05:30 DEBUG 3692 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-25T16:59:23.970+05:30  INFO 3692 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
-2026-06-25T16:59:23.980+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 10.368 seconds (process running for 11.117)
-2026-06-25T16:59:23.985+05:30  INFO 3692 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
-2026-06-25T17:05:56.154+05:30  INFO 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-25T17:05:56.170+05:30  INFO 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-25T17:05:56.179+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-06-25T17:05:56.182+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-06-25T17:05:56.338+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@25102e0
-2026-06-25T17:05:56.340+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@155afbd7
-2026-06-25T17:05:56.345+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-06-25T17:05:56.346+05:30  INFO 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 175 ms
-2026-06-25T17:05:56.500+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-25T17:05:56.536+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-25T17:05:56.896+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@676b0826]
-2026-06-25T17:05:58.266+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:05:58.267+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@f9832f7]
-2026-06-25T17:05:58.321+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:06:15.456+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
-2026-06-25T17:06:15.457+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
-2026-06-25T17:06:15.536+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:06:15.540+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-25T17:06:15.526367, status=200, success=true, message=Logout successfu (truncated)...]
-2026-06-25T17:06:15.548+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:06:28.497+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-25T17:06:28.498+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-25T17:06:28.499+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@6fe9d4c3]
-2026-06-25T17:06:28.617+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:06:28.617+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@2cfe0e3f]
-2026-06-25T17:06:28.619+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:07:14.714+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/comments", parameters={}
-2026-06-25T17:07:14.716+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#addComment(CommentRequest)
-2026-06-25T17:07:14.753+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CommentRequest(comment=Internal note: Investigating the issue, ticketId=8, commentedById=7, commentT (truncated)...]
-2026-06-25T17:07:14.939+05:30  INFO 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] c.h.d.t.service.impl.CommentServiceImpl  : Comment added to ticket TK-1782230351375 by user ravikant (Role: IT_SUPPORT)
-2026-06-25T17:07:14.957+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:07:14.969+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CommentResponse(id=5, comment=Internal note: Investigating the issue, ticketId=8, ticketNumber=TK-17 (truncated)...]
-2026-06-25T17:07:14.976+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2026-06-25T17:10:36.404+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/5?userId=7", parameters={masked}
-2026-06-25T17:10:36.406+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:10:36.441+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:10:36.442+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:10:36.449+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:11:22.255+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/5?userId=4", parameters={masked}
-2026-06-25T17:11:22.256+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:11:22.266+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:11:22.266+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:11:22.269+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:11:35.314+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
-2026-06-25T17:11:35.315+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
-2026-06-25T17:11:35.333+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:11:35.333+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-25T17:11:35.331998, status=200, success=true, message=Logout successfu (truncated)...]
-2026-06-25T17:11:35.334+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:11:44.792+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-25T17:11:44.794+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-25T17:11:44.795+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@61d730ad]
-2026-06-25T17:11:44.881+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:11:44.881+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@2a445ab4]
-2026-06-25T17:11:44.884+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:13:15.895+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/5?userId=4", parameters={masked}
-2026-06-25T17:13:15.897+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:13:15.905+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:13:15.905+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:13:15.907+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:13:45.179+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/5?userId=7", parameters={masked}
-2026-06-25T17:13:45.181+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:13:45.188+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:13:45.189+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:13:45.194+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:14:11.385+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/74?userId=7", parameters={masked}
-2026-06-25T17:14:11.386+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:14:11.396+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:14:11.396+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:14:11.397+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:14:15.803+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/74?userId=7", parameters={masked}
-2026-06-25T17:14:15.804+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:14:15.812+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:14:15.812+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:14:15.814+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:14:19.575+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/?userId=7", parameters={masked}
-2026-06-25T17:14:19.586+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-06-25T17:14:19.602+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [comments/ticket]
-2026-06-25T17:14:19.610+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-25T17:14:19.616+05:30 ERROR 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: No static resource comments/ticket for request '/api/v1/hele-desk/comments/ticket/'.
-2026-06-25T17:14:19.620+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:14:19.628+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-25T17:14:19.615672600, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
-2026-06-25T17:14:19.633+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource comments/ticket for request '/api/v1/hele-desk/comments/ticket/'.]
-2026-06-25T17:14:19.634+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-25T17:14:23.837+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/4?userId=7", parameters={masked}
-2026-06-25T17:14:23.838+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:14:23.845+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:14:23.845+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:14:23.846+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:15:15.381+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/4?userId=7", parameters={masked}
-2026-06-25T17:15:15.382+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:15:15.393+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:15:15.393+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:15:15.395+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:15:47.120+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/comments", parameters={}
-2026-06-25T17:15:47.121+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#addComment(CommentRequest)
-2026-06-25T17:15:47.124+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CommentRequest(comment=Internal note: Investigating the issue, ticketId=8, commentedById=7, commentT (truncated)...]
-2026-06-25T17:15:47.148+05:30  INFO 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] c.h.d.t.service.impl.CommentServiceImpl  : Comment added to ticket TK-1782230351375 by user ravikant (Role: IT_SUPPORT)
-2026-06-25T17:15:47.164+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:15:47.166+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CommentResponse(id=6, comment=Internal note: Investigating the issue, ticketId=8, ticketNumber=TK-17 (truncated)...]
-2026-06-25T17:15:47.168+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2026-06-25T17:16:34.392+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/8?userId=4", parameters={masked}
-2026-06-25T17:16:34.393+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:16:34.405+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:16:34.406+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
-2026-06-25T17:16:34.408+05:30 DEBUG 3692 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:22:46.359+05:30  INFO 3692 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-25T17:22:46.424+05:30  INFO 3692 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-06-25T17:22:46.464+05:30  INFO 3692 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-25T17:22:46.510+05:30  INFO 3692 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-25T17:22:46.530+05:30  INFO 3692 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-06-25T17:22:54.487+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 19556 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-25T17:22:54.494+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-25T17:22:56.215+05:30  INFO 19556 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-25T17:22:56.392+05:30  INFO 19556 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 6 JPA repository interfaces.
-2026-06-25T17:22:57.948+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-25T17:22:57.968+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-25T17:22:57.969+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-06-25T17:22:58.068+05:30  INFO 19556 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3477 ms
-2026-06-25T17:22:58.336+05:30  INFO 19556 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-25T17:22:58.439+05:30  INFO 19556 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-06-25T17:22:59.207+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-25T17:22:59.268+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-25T17:22:59.805+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24f5e9e8
-2026-06-25T17:22:59.807+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-25T17:22:59.910+05:30  WARN 19556 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-25T17:22:59.953+05:30  INFO 19556 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-06-26T14:03:55.607+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T14:03:56.393+05:30  INFO 6224 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T14:03:56.719+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-26T14:04:01.723+05:30  INFO 6224 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-26T14:04:05.731+05:30  WARN 6224 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T14:04:06.941+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
+2026-06-26T14:04:07.014+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-26T14:04:07.096+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-26T14:04:07.243+05:30  WARN 6224 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+2026-06-26T14:04:07.264+05:30  INFO 6224 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T14:04:07.270+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-26T14:04:07.322+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-26T14:04:07.329+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-26T14:04:07.335+05:30  WARN 6224 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176)
+2026-06-26T14:04:07.359+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-26T14:04:07.384+05:30 ERROR 6224 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.help.desk.AiHelpDeskApplication.main(AiHelpDeskApplication.java:13) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 21 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:148) ~[spring-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:101) ~[spring-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:310) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:277) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1054) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:989) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 24 common frames omitted
+
+2026-06-26T14:07:27.377+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 3560 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-26T14:07:27.384+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-26T14:07:29.727+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-26T14:07:29.732+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-26T14:07:30.060+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 298 ms. Found 6 JPA repository interfaces.
+2026-06-26T14:07:30.152+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-26T14:07:30.155+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-26T14:07:30.188+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.190+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.191+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.192+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.193+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.195+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-26T14:07:30.195+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2026-06-26T14:07:31.405+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-26T14:07:31.427+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-26T14:07:31.427+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-26T14:07:31.541+05:30  INFO 3560 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4001 ms
+2026-06-26T14:07:31.798+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-26T14:07:31.897+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-26T14:07:32.880+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-26T14:07:32.928+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-26T14:07:33.639+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@361483eb
+2026-06-26T14:07:33.643+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-26T14:07:33.768+05:30  WARN 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-26T14:07:33.832+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -173,57 +136,67 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-25T17:23:01.946+05:30  INFO 19556 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-25T17:23:02.144+05:30  INFO 19556 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-25T17:23:02.252+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-25T17:23:02.659+05:30  INFO 19556 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-25T17:23:04.202+05:30  WARN 19556 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-25T17:23:04.802+05:30 DEBUG 19556 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-25T17:23:04.879+05:30 DEBUG 19556 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-25T17:23:04.934+05:30 DEBUG 19556 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-25T17:23:05.010+05:30 DEBUG 19556 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-25T17:23:05.347+05:30  INFO 19556 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
-2026-06-25T17:23:05.358+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 11.64 seconds (process running for 12.343)
-2026-06-25T17:23:05.364+05:30  INFO 19556 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
-2026-06-25T17:23:18.089+05:30  INFO 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-25T17:23:18.089+05:30  INFO 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-25T17:23:18.090+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-06-25T17:23:18.090+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-06-25T17:23:18.094+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@697b105e
-2026-06-25T17:23:18.095+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@18be3e85
-2026-06-25T17:23:18.095+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-06-25T17:23:18.096+05:30  INFO 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2026-06-25T17:23:18.578+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/8?userId=4", parameters={masked}
-2026-06-25T17:23:18.586+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:23:18.723+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:23:18.734+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[CommentResponse(id=4, comment=This is a test comment from an employee, ticketId=8, ticketNumber=TK- (truncated)...]
-2026-06-25T17:23:18.850+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:23:42.423+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/logout", parameters={}
-2026-06-25T17:23:42.424+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#logout(String)
-2026-06-25T17:23:42.509+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:23:42.512+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(timestamp=2026-06-25T17:23:42.488169300, status=200, success=true, message=Logout succes (truncated)...]
-2026-06-25T17:23:42.515+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:23:52.794+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/8?userId=4", parameters={masked}
-2026-06-25T17:23:52.796+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicket(Long, Long)
-2026-06-25T17:23:52.811+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:23:52.811+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[CommentResponse(id=4, comment=This is a test comment from an employee, ticketId=8, ticketNumber=TK- (truncated)...]
-2026-06-25T17:23:52.813+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:25:34.253+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-25T17:25:34.254+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-25T17:25:34.292+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@2998459a]
-2026-06-25T17:25:34.551+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:25:34.554+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@279b1dfe]
-2026-06-25T17:25:34.558+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-25T17:25:51.119+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/hele-desk/comments/ticket/8/paginated?userId=4", parameters={masked}
-2026-06-25T17:25:51.120+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.tickets.controller.CommentController#getCommentsByTicketPaginated(Long, Long, Pageable)
-2026-06-25T17:25:51.164+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-25T17:25:51.167+05:30 ERROR 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: class org.springframework.data.util.LazyStreamable cannot be cast to class org.springframework.data.domain.Page (org.springframework.data.util.LazyStreamable and org.springframework.data.domain.Page are in unnamed module of loader 'app')
-2026-06-25T17:25:51.169+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-25T17:25:51.173+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-25T17:25:51.167184900, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
-2026-06-25T17:25:51.176+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.ClassCastException: class org.springframework.data.util.LazyStreamable cannot be cast to class org.springframework.data.domain.Page (org.springframework.data.util.LazyStreamable and org.springframework.data.domain.Page are in unnamed module of loader 'app')]
-2026-06-25T17:25:51.179+05:30 DEBUG 19556 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-25T17:30:26.250+05:30  INFO 19556 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-25T17:30:26.301+05:30  INFO 19556 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-06-25T17:30:26.309+05:30  INFO 19556 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-25T17:30:26.314+05:30  INFO 19556 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-25T17:30:26.328+05:30  INFO 19556 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-26T14:07:35.300+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-26T14:07:35.515+05:30  INFO 3560 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T14:07:35.655+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-26T14:07:37.349+05:30  INFO 3560 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-26T14:07:39.149+05:30  WARN 3560 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-26T14:07:39.878+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
+2026-06-26T14:07:39.966+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-26T14:07:40.043+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-26T14:07:40.175+05:30  WARN 3560 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+2026-06-26T14:07:40.210+05:30  INFO 3560 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-26T14:07:40.215+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-26T14:07:40.236+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-26T14:07:40.241+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-26T14:07:40.246+05:30  WARN 3560 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176)
+2026-06-26T14:07:40.268+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-26T14:07:40.296+05:30 ERROR 3560 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.help.desk.AiHelpDeskApplication.main(AiHelpDeskApplication.java:13) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 21 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:148) ~[spring-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:101) ~[spring-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:310) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:277) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1054) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:989) ~[spring-webmvc-7.0.7.jar:7.0.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 24 common frames omitted
+

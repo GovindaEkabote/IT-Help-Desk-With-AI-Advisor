@@ -6,12 +6,15 @@ import com.help.desk.auth.service.AuthService;
 import com.help.desk.auth.service.ChangePasswordService;
 import com.help.desk.auth.service.EmailService;
 import com.help.desk.exception.ApiResponse;
+import com.help.desk.exception.TooManyRequestsException;
+import com.help.desk.radis.service.RateLimiterService;
 import com.help.desk.user.dto.response.UserResponse;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
 import com.help.desk.user.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +30,18 @@ public class AuthController {
     private final EmailService emailService;
     private final ChangePasswordService changePasswordService;
 
+    @Autowired
+    private RateLimiterService rateLimiterService;
+
     @PostMapping("/login")
     public AuthResponse login(@RequestBody LoginRequest request) {
+
+        String key = "login:" + request.getEmail();
+
+        if(!rateLimiterService.isAllowed(key,5,60)){
+            throw new TooManyRequestsException("Too many requests. Please try again after 1 minute.");
+        }
+
         return authService.login(request);
     }
 
