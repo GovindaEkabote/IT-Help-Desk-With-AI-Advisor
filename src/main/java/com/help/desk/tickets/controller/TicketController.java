@@ -1,6 +1,8 @@
 package com.help.desk.tickets.controller;
 
 import com.help.desk.auth.service.AuthService;
+import com.help.desk.exception.TooManyRequestsException;
+import com.help.desk.radis.service.RateLimiterService;
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
 import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
@@ -8,6 +10,7 @@ import com.help.desk.tickets.service.TicketService;
 import com.help.desk.user.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,6 +29,8 @@ public class TicketController {
 
     private final TicketService ticketService;
     private final AuthService authService;
+    @Autowired
+    private RateLimiterService rateLimiterService;
 
     public TicketController(TicketService ticketService, AuthService authService){
         this.ticketService = ticketService;
@@ -40,6 +45,11 @@ public class TicketController {
     public ResponseEntity<TicketResponse> createTicket(
             @Valid @RequestBody TicketRequest ticketRequest
     ){
+        String key = "Create Ticket";
+
+        if(!rateLimiterService.isAllowed(key,10,60)){
+            throw new TooManyRequestsException("Too many requests. Please try again after 1 minute.");
+        }
         TicketResponse ticketResponse = ticketService.createTicket(ticketRequest);
         return ResponseEntity.ok(ticketResponse);
     }

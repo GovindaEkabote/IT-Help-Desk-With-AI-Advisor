@@ -1,6 +1,8 @@
 package com.help.desk.user.controller;
 
 import com.help.desk.exception.ApiResponse;
+import com.help.desk.exception.TooManyRequestsException;
+import com.help.desk.radis.service.RateLimiterService;
 import com.help.desk.user.dto.request.CreateUserRequest;
 import com.help.desk.user.dto.request.UpdateRoleRequest;
 import com.help.desk.user.dto.response.UserResponse;
@@ -8,6 +10,7 @@ import com.help.desk.user.enums.UserRole;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import com.help.desk.user.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +25,9 @@ public class UserController {
 
     private final UserService userService;
 
+    @Autowired
+    private RateLimiterService rateLimiterService;
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -30,6 +36,11 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserResponse> createUser(
             @Valid @RequestBody CreateUserRequest request) {
+        String key = "Register";
+        if(!rateLimiterService.isAllowed(key,10,60)){
+            throw new TooManyRequestsException("Too many requests. Please try again after 1 minute.");
+        }
+
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(userService.createUser(request));
     }
