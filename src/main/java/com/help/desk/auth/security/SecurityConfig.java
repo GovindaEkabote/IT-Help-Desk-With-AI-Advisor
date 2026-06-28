@@ -60,9 +60,11 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/users/**"
                         ).permitAll()
-                        .anyRequest()
-                        .authenticated()
+                        .requestMatchers(
+                                "/kb/**"
+                        ).permitAll().anyRequest().authenticated()
                 )
+
                 .exceptionHandling(
                         ex -> ex
                                 .accessDeniedHandler(customAccessDeniedHandler)

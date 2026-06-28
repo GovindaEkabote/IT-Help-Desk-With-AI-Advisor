@@ -23,12 +23,14 @@ public interface KnowledgeBaseRepository extends JpaRepository<KnowledgeModel, L
 
     // search in title, content, keywords
     @Query("""
-            SELECT k FROM KnowledgeModel WHERE 
-            k.status = 'PUBLISHED' AND
-            (LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR 
-            LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR 
-            LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR 
-            LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+            SELECT k FROM KnowledgeModel k
+                WHERE k.status = 'PUBLISHED'
+                  AND (
+                  LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+                  OR LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+                  OR LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+                  OR LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+                )
             """)
     Page<KnowledgeModel> searchPublished(
             @Param("searchTerm") String searchTerm,

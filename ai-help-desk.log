@@ -1,29 +1,30 @@
-2026-06-26T14:03:41.860+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 6224 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-26T14:03:41.891+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-26T14:03:45.889+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:03:45.892+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-26T14:03:47.238+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 606 ms. Found 6 JPA repository interfaces.
-2026-06-26T14:03:47.359+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:03:47.361+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-06-26T14:03:47.424+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.428+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.428+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.429+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.429+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.432+05:30  INFO 6224 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:03:47.432+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
-2026-06-26T14:03:49.811+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-26T14:03:49.850+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-26T14:03:49.856+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-26T14:03:50.140+05:30  INFO 6224 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8101 ms
-2026-06-26T14:03:50.719+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-26T14:03:50.845+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-26T14:03:51.905+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-26T14:03:51.974+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-26T14:03:52.825+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@361483eb
-2026-06-26T14:03:52.829+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-26T14:03:53.178+05:30  WARN 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-26T14:03:53.312+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-06-28T23:26:33.013+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 18596 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-28T23:26:33.026+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:26:35.332+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:26:35.334+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:26:35.679+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 323 ms. Found 7 JPA repository interfaces.
+2026-06-28T23:26:35.764+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:26:35.766+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-28T23:26:35.812+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.817+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.818+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.knowledgebase.repository.KnowledgeBaseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.819+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.819+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.819+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.821+05:30  INFO 18596 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:26:35.821+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2026-06-28T23:26:38.086+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-28T23:26:38.115+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:26:38.116+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-28T23:26:38.520+05:30  INFO 18596 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5350 ms
+2026-06-28T23:26:39.166+05:30  INFO 18596 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:26:39.312+05:30  INFO 18596 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-28T23:26:40.159+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:26:40.215+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:26:41.033+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@248b2091
+2026-06-28T23:26:41.036+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:26:41.261+05:30  WARN 18596 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:26:41.322+05:30  INFO 18596 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -35,28 +36,268 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-26T14:03:55.607+05:30  INFO 6224 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-26T14:03:56.393+05:30  INFO 6224 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:03:56.719+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-26T14:04:01.723+05:30  INFO 6224 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-26T14:04:05.731+05:30  WARN 6224 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-26T14:04:06.941+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-26T14:04:07.014+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-26T14:04:07.096+05:30 DEBUG 6224 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-26T14:04:07.243+05:30  WARN 6224 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
-2026-06-26T14:04:07.264+05:30  INFO 6224 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:04:07.270+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-26T14:04:07.322+05:30  INFO 6224 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-06-26T14:04:07.329+05:30  INFO 6224 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-06-26T14:04:07.335+05:30  WARN 6224 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2026-06-28T23:26:43.107+05:30  INFO 18596 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:26:43.637+05:30  INFO 18596 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:26:43.854+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-28T23:26:45.439+05:30  INFO 18596 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-28T23:26:48.302+05:30  WARN 18596 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'knowledgeBaseController' defined in file [D:\03_Projects\AI-Help-Desk\target\classes\com\help\desk\knowledgebase\controller\KnowledgeBaseController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'knowledgeBaseService' defined in file [D:\03_Projects\AI-Help-Desk\target\classes\com\help\desk\knowledgebase\service\KnowledgeBaseService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'knowledgeBaseRepository' defined in com.help.desk.knowledgebase.repository.KnowledgeBaseRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+2026-06-28T23:26:48.326+05:30  INFO 18596 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:26:48.334+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:26:48.354+05:30  INFO 18596 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:26:48.358+05:30  INFO 18596 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-28T23:26:48.365+05:30  WARN 18596 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
  java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176)
-2026-06-26T14:04:07.359+05:30  INFO 6224 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-06-28T23:26:48.382+05:30  INFO 18596 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-06-26T14:04:07.384+05:30 ERROR 6224 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
+2026-06-28T23:26:48.405+05:30 ERROR 18596 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'knowledgeBaseController' defined in file [D:\03_Projects\AI-Help-Desk\target\classes\com\help\desk\knowledgebase\controller\KnowledgeBaseController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'knowledgeBaseService' defined in file [D:\03_Projects\AI-Help-Desk\target\classes\com\help\desk\knowledgebase\service\KnowledgeBaseService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'knowledgeBaseRepository' defined in com.help.desk.knowledgebase.repository.KnowledgeBaseRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.help.desk.AiHelpDeskApplication.main(AiHelpDeskApplication.java:13) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'knowledgeBaseService' defined in file [D:\03_Projects\AI-Help-Desk\target\classes\com\help\desk\knowledgebase\service\KnowledgeBaseService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'knowledgeBaseRepository' defined in com.help.desk.knowledgebase.repository.KnowledgeBaseRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'knowledgeBaseRepository' defined in com.help.desk.knowledgebase.repository.KnowledgeBaseRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 35 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Cannot create query for method [KnowledgeBaseRepository.searchPublished(java.lang.String,org.springframework.data.domain.Pageable)]; At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:139) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:118) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:102) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:90) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:413) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$1(RepositoryFactoryBeanSupport.java:361) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:136) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:370) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:212) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 46 common frames omitted
+Caused by: org.springframework.data.jpa.repository.query.BadJpqlGrammarException: At 6:56 and token ')', extraneous input ')' expecting <EOF>; Bad HQL grammar [SELECT k FROM KnowledgeModel WHERE
+k.status = 'PUBLISHED' AND
+(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR
+LOWER(k.tags) LIKE LOWER(CONCAT('%', :searchTerm, '%'))))
+]
+	at org.springframework.data.jpa.repository.query.BadJpqlGrammarErrorListener.syntaxError(BadJpqlGrammarErrorListener.java:53) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportUnwantedToken(DefaultErrorStrategy.java:377) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.antlr.v4.runtime.DefaultErrorStrategy.singleTokenDeletion(DefaultErrorStrategy.java:548) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.antlr.v4.runtime.DefaultErrorStrategy.recoverInline(DefaultErrorStrategy.java:467) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.antlr.v4.runtime.Parser.match(Parser.java:208) ~[antlr4-runtime-4.13.2.jar:4.13.2]
+	at org.springframework.data.jpa.repository.query.HqlParser.start(HqlParser.java:388) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryEnhancer.parse(JpaQueryEnhancer.java:102) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryEnhancer$HqlQueryParser.<init>(JpaQueryEnhancer.java:286) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryEnhancer$HqlQueryParser.parseQuery(JpaQueryEnhancer.java:298) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryEnhancer.forHql(JpaQueryEnhancer.java:159) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.QueryEnhancerFactories$BuiltinQueryEnhancerFactories$3.create(QueryEnhancerFactories.java:91) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.DefaultEntityQuery.<init>(DefaultEntityQuery.java:50) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.EntityQuery.create(EntityQuery.java:47) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.TemplatedQuery.create(TemplatedQuery.java:91) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.AbstractStringBasedJpaQuery.<init>(AbstractStringBasedJpaQuery.java:101) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:50) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.createStringQuery(JpaQueryLookupStrategy.java:228) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:160) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:285) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:93) ~[spring-data-jpa-4.0.5.jar:4.0.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:114) ~[spring-data-commons-4.0.5.jar:4.0.5]
+	... 56 common frames omitted
+
+2026-06-28T23:42:15.794+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 24848 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-28T23:42:15.800+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:42:19.483+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:42:19.487+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:42:20.095+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 572 ms. Found 7 JPA repository interfaces.
+2026-06-28T23:42:20.244+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:42:20.246+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-28T23:42:20.600+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.610+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.612+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.knowledgebase.repository.KnowledgeBaseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.613+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.614+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.615+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.616+05:30  INFO 24848 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:42:20.617+05:30  INFO 24848 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 0 Redis repository interfaces.
+2026-06-28T23:42:22.020+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-28T23:42:22.054+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:42:22.056+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-28T23:42:22.188+05:30  INFO 24848 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6224 ms
+2026-06-28T23:42:22.527+05:30  INFO 24848 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:42:22.638+05:30  INFO 24848 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-28T23:42:23.373+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:42:23.416+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:42:24.053+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42150951
+2026-06-28T23:42:24.055+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:42:24.165+05:30  WARN 24848 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:42:24.209+05:30  INFO 24848 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-28T23:42:26.083+05:30  INFO 24848 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:42:26.292+05:30  INFO 24848 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:42:26.395+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-28T23:42:27.565+05:30  INFO 24848 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-28T23:42:31.129+05:30  WARN 24848 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-28T23:42:32.104+05:30 DEBUG 24848 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-06-28T23:42:32.258+05:30 DEBUG 24848 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-28T23:42:32.359+05:30 DEBUG 24848 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-28T23:42:32.453+05:30 DEBUG 24848 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-28T23:42:33.183+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Using the vector table name: vector_store. Is empty: false
+2026-06-28T23:42:33.195+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Initializing PGVectorStore schema for table: vector_store in schema: public
+2026-06-28T23:42:33.196+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : vectorTableValidationsEnabled false
+2026-06-28T23:42:33.596+05:30  INFO 24848 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
+2026-06-28T23:42:33.614+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 19.196 seconds (process running for 20.12)
+2026-06-28T23:42:33.619+05:30  INFO 24848 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
+2026-06-28T23:46:04.111+05:30  INFO 24848 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-28T23:46:04.159+05:30  INFO 24848 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-28T23:46:04.201+05:30  INFO 24848 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:46:04.207+05:30  INFO 24848 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:46:04.220+05:30  INFO 24848 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:46:10.818+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 20896 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-28T23:46:10.826+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:46:12.530+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:46:12.533+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:46:12.779+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 233 ms. Found 7 JPA repository interfaces.
+2026-06-28T23:46:12.860+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:46:12.861+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-28T23:46:12.895+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.897+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.900+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.knowledgebase.repository.KnowledgeBaseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.900+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.901+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.902+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.905+05:30  INFO 20896 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:12.905+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2026-06-28T23:46:13.934+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-28T23:46:13.956+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:46:13.957+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-28T23:46:14.075+05:30  INFO 20896 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3173 ms
+2026-06-28T23:46:14.332+05:30  INFO 20896 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:46:14.412+05:30  INFO 20896 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-28T23:46:14.962+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:46:15.017+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:46:15.457+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b86a656
+2026-06-28T23:46:15.460+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:46:15.527+05:30  WARN 20896 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:46:15.568+05:30  INFO 20896 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: ai_help_desk/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-28T23:46:17.130+05:30  INFO 20896 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:46:17.265+05:30  INFO 20896 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:46:17.339+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-28T23:46:18.366+05:30  INFO 20896 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-28T23:46:21.297+05:30  WARN 20896 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-28T23:46:21.589+05:30  WARN 20896 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/help/desk/auth/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
+2026-06-28T23:46:21.603+05:30  INFO 20896 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:46:21.607+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:46:21.620+05:30  INFO 20896 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:46:21.623+05:30  INFO 20896 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-28T23:46:21.626+05:30  WARN 20896 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176)
+2026-06-28T23:46:21.639+05:30  INFO 20896 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-28T23:46:21.656+05:30 ERROR 20896 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/help/desk/auth/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
@@ -79,19 +320,24 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
 	at com.help.desk.AiHelpDeskApplication.main(AiHelpDeskApplication.java:13) ~[classes/:na]
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar:7.0.7]
 	... 21 common frames omitted
-Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception)}
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:148) ~[spring-web-7.0.7.jar:7.0.7]
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:101) ~[spring-web-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:310) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:277) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1054) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:989) ~[spring-webmvc-7.0.7.jar:7.0.7]
+Caused by: java.lang.IllegalStateException: Can't configure requestMatchers after anyRequest
+	at org.springframework.util.Assert.state(Assert.java:80) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:146) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:195) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at com.help.desk.auth.security.SecurityConfig.lambda$securityFilterChain$1(SecurityConfig.java:66) ~[classes/:na]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests(HttpSecurity.java:715) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at com.help.desk.auth.security.SecurityConfig.securityFilterChain(SecurityConfig.java:59) ~[classes/:na]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$securityFilterChain$2(<generated>) ~[classes/:na]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:398) ~[spring-context-7.0.7.jar:7.0.7]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$0.securityFilterChain(<generated>) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -99,32 +345,33 @@ Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method m
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar:7.0.7]
 	... 24 common frames omitted
 
-2026-06-26T14:07:27.377+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 3560 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-26T14:07:27.384+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-26T14:07:29.727+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:07:29.732+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-26T14:07:30.060+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 298 ms. Found 6 JPA repository interfaces.
-2026-06-26T14:07:30.152+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:07:30.155+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-06-26T14:07:30.188+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.190+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.191+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.192+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.193+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.195+05:30  INFO 3560 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:07:30.195+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2026-06-26T14:07:31.405+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-26T14:07:31.427+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-26T14:07:31.427+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-26T14:07:31.541+05:30  INFO 3560 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4001 ms
-2026-06-26T14:07:31.798+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-26T14:07:31.897+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-26T14:07:32.880+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-26T14:07:32.928+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-26T14:07:33.639+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@361483eb
-2026-06-26T14:07:33.643+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-26T14:07:33.768+05:30  WARN 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-26T14:07:33.832+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-06-28T23:46:36.605+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 19372 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
+2026-06-28T23:46:36.611+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T23:46:38.195+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:46:38.197+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-28T23:46:38.486+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 7 JPA repository interfaces.
+2026-06-28T23:46:38.553+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-28T23:46:38.555+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-28T23:46:38.584+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.589+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.590+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.knowledgebase.repository.KnowledgeBaseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.590+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.591+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.591+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.593+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-28T23:46:38.593+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2026-06-28T23:46:39.663+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
+2026-06-28T23:46:39.682+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-28T23:46:39.684+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-28T23:46:39.809+05:30  INFO 19372 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3124 ms
+2026-06-28T23:46:40.029+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-28T23:46:40.091+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-28T23:46:40.662+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-28T23:46:40.690+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-28T23:46:41.039+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@688efeb2
+2026-06-28T23:46:41.042+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-28T23:46:41.114+05:30  WARN 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-28T23:46:41.143+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -136,28 +383,25 @@ Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method m
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-06-26T14:07:35.300+05:30  INFO 3560 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-26T14:07:35.515+05:30  INFO 3560 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:07:35.655+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-26T14:07:37.349+05:30  INFO 3560 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-26T14:07:39.149+05:30  WARN 3560 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-26T14:07:39.878+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-26T14:07:39.966+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-26T14:07:40.043+05:30 DEBUG 3560 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-26T14:07:40.175+05:30  WARN 3560 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
-2026-06-26T14:07:40.210+05:30  INFO 3560 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:07:40.215+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-26T14:07:40.236+05:30  INFO 3560 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-06-26T14:07:40.241+05:30  INFO 3560 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-06-26T14:07:40.246+05:30  WARN 3560 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2026-06-28T23:46:42.632+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-28T23:46:42.770+05:30  INFO 19372 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:46:42.851+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-28T23:46:43.747+05:30  INFO 19372 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-06-28T23:46:46.184+05:30  WARN 19372 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-28T23:46:46.461+05:30  WARN 19372 --- [AI-Help-Desk] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/help/desk/auth/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
+2026-06-28T23:46:46.478+05:30  INFO 19372 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-28T23:46:46.482+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-28T23:46:46.494+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-28T23:46:46.498+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-28T23:46:46.501+05:30  WARN 19372 --- [AI-Help-Desk] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1#hele-desk] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
  java.base@17.0.10/sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:176)
-2026-06-26T14:07:40.268+05:30  INFO 3560 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-06-28T23:46:46.514+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-06-26T14:07:40.296+05:30 ERROR 3560 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
+2026-06-28T23:46:46.531+05:30 ERROR 19372 --- [AI-Help-Desk] [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/help/desk/auth/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
@@ -180,19 +424,24 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
 	at com.help.desk.AiHelpDeskApplication.main(AiHelpDeskApplication.java:13) ~[classes/:na]
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: Can't configure requestMatchers after anyRequest
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar:7.0.7]
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar:7.0.7]
 	... 21 common frames omitted
-Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=java.lang.Exception, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest), public org.springframework.http.ResponseEntity com.help.desk.exception.GlobalExceptionHandler.handleGenericException(java.lang.Exception,jakarta.servlet.http.HttpServletRequest)}
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:148) ~[spring-web-7.0.7.jar:7.0.7]
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:101) ~[spring-web-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:310) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:277) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1054) ~[spring-webmvc-7.0.7.jar:7.0.7]
-	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:989) ~[spring-webmvc-7.0.7.jar:7.0.7]
+Caused by: java.lang.IllegalStateException: Can't configure requestMatchers after anyRequest
+	at org.springframework.util.Assert.state(Assert.java:80) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:146) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.requestMatchers(AbstractRequestMatcherRegistry.java:195) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at com.help.desk.auth.security.SecurityConfig.lambda$securityFilterChain$1(SecurityConfig.java:66) ~[classes/:na]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests(HttpSecurity.java:715) ~[spring-security-config-7.0.5.jar:7.0.5]
+	at com.help.desk.auth.security.SecurityConfig.securityFilterChain(SecurityConfig.java:59) ~[classes/:na]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$securityFilterChain$1(<generated>) ~[classes/:na]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:398) ~[spring-context-7.0.7.jar:7.0.7]
+	at com.help.desk.auth.security.SecurityConfig$$SpringCGLIB$$0.securityFilterChain(<generated>) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -200,293 +449,3 @@ Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method m
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar:7.0.7]
 	... 24 common frames omitted
 
-2026-06-26T14:14:14.956+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 2744 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-26T14:14:15.013+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-26T14:14:17.234+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:14:17.237+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-26T14:14:17.701+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 447 ms. Found 6 JPA repository interfaces.
-2026-06-26T14:14:17.792+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T14:14:17.798+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-06-26T14:14:17.853+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.856+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.856+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.857+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.857+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.858+05:30  INFO 2744 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T14:14:17.859+05:30  INFO 2744 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
-2026-06-26T14:14:19.198+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-26T14:14:19.218+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-26T14:14:19.218+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-26T14:14:19.348+05:30  INFO 2744 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4256 ms
-2026-06-26T14:14:19.606+05:30  INFO 2744 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-26T14:14:19.709+05:30  INFO 2744 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-26T14:14:20.321+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-26T14:14:20.357+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-26T14:14:20.795+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@361483eb
-2026-06-26T14:14:20.796+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-26T14:14:20.902+05:30  WARN 2744 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-26T14:14:20.956+05:30  INFO 2744 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.42
-	Default catalog/schema: ai_help_desk/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-26T14:14:22.267+05:30  INFO 2744 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-26T14:14:22.446+05:30  INFO 2744 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:14:22.561+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-26T14:14:23.622+05:30  INFO 2744 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-26T14:14:26.218+05:30  WARN 2744 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-26T14:14:26.885+05:30 DEBUG 2744 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-26T14:14:26.964+05:30 DEBUG 2744 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-26T14:14:27.024+05:30 DEBUG 2744 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-26T14:14:27.130+05:30 DEBUG 2744 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-26T14:14:28.312+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Using the vector table name: vector_store. Is empty: false
-2026-06-26T14:14:28.348+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Initializing PGVectorStore schema for table: vector_store in schema: public
-2026-06-26T14:14:28.349+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : vectorTableValidationsEnabled false
-2026-06-26T14:14:29.052+05:30  INFO 2744 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
-2026-06-26T14:14:29.082+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 15.635 seconds (process running for 16.581)
-2026-06-26T14:14:29.099+05:30  INFO 2744 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
-2026-06-26T14:15:47.591+05:30  INFO 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.a.c.c.C.[.[.[/api/v1/hele-desk]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-26T14:15:47.600+05:30  INFO 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-26T14:15:47.605+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-06-26T14:15:47.608+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-06-26T14:15:47.694+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3593747f
-2026-06-26T14:15:47.696+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7dea9ff9
-2026-06-26T14:15:47.698+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-06-26T14:15:47.699+05:30  INFO 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 96 ms
-2026-06-26T14:15:49.228+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:15:49.229+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:15:49.234+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:15:49.255+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:15:49.254+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:15:49.254+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:15:49.684+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:15:49.686+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:15:49.801+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@77c43329]
-2026-06-26T14:15:49.801+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@73d2396f]
-2026-06-26T14:15:49.801+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@6ec5a16e]
-2026-06-26T14:15:49.801+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@3a32ae30]
-2026-06-26T14:15:51.020+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:15:51.021+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:15:51.023+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@71751266]
-2026-06-26T14:15:53.336+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:15:53.338+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.help.desk.auth.dto.response.AuthResponse@5a374f91]
-2026-06-26T14:15:53.426+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
-2026-06-26T14:15:53.427+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] org.hibernate.orm.jdbc.error             : Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'
-2026-06-26T14:15:53.469+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
-2026-06-26T14:15:53.469+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] org.hibernate.orm.jdbc.error             : Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'
-2026-06-26T14:15:53.471+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
-2026-06-26T14:15:53.472+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] org.hibernate.orm.jdbc.error             : Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'
-2026-06-26T14:15:53.478+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-26T14:15:53.478+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-26T14:15:53.483+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]
-2026-06-26T14:15:53.483+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]
-2026-06-26T14:15:53.488+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
-2026-06-26T14:15:53.488+05:30  WARN 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] org.hibernate.orm.jdbc.error             : Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'
-2026-06-26T14:15:53.495+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:15:53.496+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-26T14:15:53.500+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]
-2026-06-26T14:15:53.501+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:15:53.495+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:15:53.511+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:15:53.500192, status=500, error=INTERNAL_SERVER_ERROR, message=Some (truncated)...]
-2026-06-26T14:15:53.512+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:15:53.483621500, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
-2026-06-26T14:15:53.511+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:15:53.483621500, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
-2026-06-26T14:15:53.651+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-06-26T14:15:53.683+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleGenericException(Exception, HttpServletRequest)
-2026-06-26T14:15:53.684+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] c.h.d.exception.GlobalExceptionHandler   : Something went wrong: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]
-2026-06-26T14:15:53.685+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:15:53.685+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:15:53.684238200, status=500, error=INTERNAL_SERVER_ERROR, message=S (truncated)...]
-2026-06-26T14:15:53.688+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]]
-2026-06-26T14:15:53.689+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-26T14:15:53.691+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]]
-2026-06-26T14:15:53.693+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-26T14:15:53.695+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]]
-2026-06-26T14:15:53.695+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-26T14:15:53.697+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '4' for key 'refresh_token.UKf95ixxe7pa48ryn1awmh2evt7'] [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; SQL [insert into refresh_token (expiry_date,revoked,token,user_id) values (?,?,?,?)]; constraint [refresh_token.UKf95ixxe7pa48ryn1awmh2evt7]]
-2026-06-26T14:15:53.698+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2026-06-26T14:17:30.701+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:30.702+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:30.703+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@363f9b81]
-2026-06-26T14:17:30.794+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleBadRequest(BadRequestException, HttpServletRequest)
-2026-06-26T14:17:30.794+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] c.h.d.exception.GlobalExceptionHandler   : Bad RequestInvalid email or password
-2026-06-26T14:17:30.795+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:30.795+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:17:30.794152700, status=204, error=BAD_REQUEST, message=Invalid ema (truncated)...]
-2026-06-26T14:17:30.796+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.BadRequestException: Invalid email or password]
-2026-06-26T14:17:30.796+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-06-26T14:17:31.272+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:31.275+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:31.276+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@4b15879d]
-2026-06-26T14:17:31.374+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleBadRequest(BadRequestException, HttpServletRequest)
-2026-06-26T14:17:31.375+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] c.h.d.exception.GlobalExceptionHandler   : Bad RequestInvalid email or password
-2026-06-26T14:17:31.375+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:31.375+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:17:31.375635700, status=204, error=BAD_REQUEST, message=Invalid ema (truncated)...]
-2026-06-26T14:17:31.377+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.BadRequestException: Invalid email or password]
-2026-06-26T14:17:31.378+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-06-26T14:17:31.732+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:31.733+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:31.736+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@5a204b3d]
-2026-06-26T14:17:32.029+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleBadRequest(BadRequestException, HttpServletRequest)
-2026-06-26T14:17:32.030+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] c.h.d.exception.GlobalExceptionHandler   : Bad RequestInvalid email or password
-2026-06-26T14:17:32.030+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:32.031+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:17:32.030026800, status=204, error=BAD_REQUEST, message=Invalid ema (truncated)...]
-2026-06-26T14:17:32.032+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.BadRequestException: Invalid email or password]
-2026-06-26T14:17:32.036+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-06-26T14:17:32.232+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:32.232+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:32.234+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@459e4c1a]
-2026-06-26T14:17:32.396+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleBadRequest(BadRequestException, HttpServletRequest)
-2026-06-26T14:17:32.396+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] c.h.d.exception.GlobalExceptionHandler   : Bad RequestInvalid email or password
-2026-06-26T14:17:32.397+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:32.397+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:17:32.396042500, status=204, error=BAD_REQUEST, message=Invalid ema (truncated)...]
-2026-06-26T14:17:32.398+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.BadRequestException: Invalid email or password]
-2026-06-26T14:17:32.400+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-06-26T14:17:32.667+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:32.667+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:32.669+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@a13a486]
-2026-06-26T14:17:32.751+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleBadRequest(BadRequestException, HttpServletRequest)
-2026-06-26T14:17:32.751+05:30 ERROR 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] c.h.d.exception.GlobalExceptionHandler   : Bad RequestInvalid email or password
-2026-06-26T14:17:32.752+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:32.752+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiError(timestamp=2026-06-26T14:17:32.751808400, status=204, error=BAD_REQUEST, message=Invalid ema (truncated)...]
-2026-06-26T14:17:32.753+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.BadRequestException: Invalid email or password]
-2026-06-26T14:17:32.754+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-06-26T14:17:33.412+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:33.412+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:33.413+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@298d83d7]
-2026-06-26T14:17:33.415+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleTooManyRequests(TooManyRequestsException)
-2026-06-26T14:17:33.419+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:33.420+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.help.desk.exception.ErrorResponse@49f159ab]
-2026-06-26T14:17:33.424+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.TooManyRequestsException: Too many requests. Please try again after 1 minute.]
-2026-06-26T14:17:33.429+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 429 TOO_MANY_REQUESTS
-2026-06-26T14:17:34.382+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/hele-desk/users/auth/login", parameters={}
-2026-06-26T14:17:34.383+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.help.desk.auth.controller.AuthController#login(LoginRequest)
-2026-06-26T14:17:34.385+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.help.desk.auth.dto.request.LoginRequest@4270c349]
-2026-06-26T14:17:34.387+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.help.desk.exception.GlobalExceptionHandler#handleTooManyRequests(TooManyRequestsException)
-2026-06-26T14:17:34.388+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
-2026-06-26T14:17:34.388+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.help.desk.exception.ErrorResponse@4888a839]
-2026-06-26T14:17:34.389+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.help.desk.exception.TooManyRequestsException: Too many requests. Please try again after 1 minute.]
-2026-06-26T14:17:34.390+05:30 DEBUG 2744 --- [AI-Help-Desk] [http-nio-4000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 429 TOO_MANY_REQUESTS
-2026-06-26T14:20:11.705+05:30  INFO 2744 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-26T14:20:11.844+05:30  INFO 2744 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-06-26T14:20:12.199+05:30  INFO 2744 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T14:20:12.261+05:30  INFO 2744 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-26T14:20:12.344+05:30  INFO 2744 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-06-26T17:32:02.877+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 19372 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-26T17:32:02.887+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-26T17:32:05.685+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T17:32:05.688+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-26T17:32:06.006+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 302 ms. Found 6 JPA repository interfaces.
-2026-06-26T17:32:06.079+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T17:32:06.080+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-06-26T17:32:06.119+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.121+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.123+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.124+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.125+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.127+05:30  INFO 19372 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:32:06.128+05:30  INFO 19372 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
-2026-06-26T17:32:07.527+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-26T17:32:07.551+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-26T17:32:07.552+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-26T17:32:07.719+05:30  INFO 19372 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4703 ms
-2026-06-26T17:32:07.984+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-26T17:32:08.083+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-26T17:32:10.307+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-26T17:32:10.386+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-26T17:32:11.161+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6055e899
-2026-06-26T17:32:11.172+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-26T17:32:11.359+05:30  WARN 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-26T17:32:11.386+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.42
-	Default catalog/schema: ai_help_desk/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-26T17:32:12.879+05:30  INFO 19372 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-26T17:32:13.205+05:30  INFO 19372 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T17:32:13.311+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-26T17:32:14.369+05:30  INFO 19372 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-26T17:32:16.126+05:30  WARN 19372 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-26T17:32:16.818+05:30 DEBUG 19372 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-26T17:32:16.878+05:30 DEBUG 19372 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-26T17:32:16.933+05:30 DEBUG 19372 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-26T17:32:17.070+05:30 DEBUG 19372 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-26T17:32:18.412+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Using the vector table name: vector_store. Is empty: false
-2026-06-26T17:32:18.430+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Initializing PGVectorStore schema for table: vector_store in schema: public
-2026-06-26T17:32:18.434+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : vectorTableValidationsEnabled false
-2026-06-26T17:32:18.791+05:30  INFO 19372 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
-2026-06-26T17:32:18.808+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 16.739 seconds (process running for 17.851)
-2026-06-26T17:32:18.814+05:30  INFO 19372 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
-2026-06-26T17:33:21.352+05:30  INFO 19372 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-26T17:33:21.400+05:30  INFO 19372 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-06-26T17:33:21.422+05:30  INFO 19372 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T17:33:21.425+05:30  INFO 19372 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-26T17:33:21.440+05:30  INFO 19372 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-06-26T17:33:28.649+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Starting AiHelpDeskApplication using Java 17.0.10 with PID 20004 (D:\03_Projects\AI-Help-Desk\target\classes started by Govinda in D:\03_Projects\AI-Help-Desk)
-2026-06-26T17:33:28.656+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-06-26T17:33:30.598+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T17:33:30.601+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-26T17:33:30.904+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282 ms. Found 6 JPA repository interfaces.
-2026-06-26T17:33:30.963+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-06-26T17:33:30.964+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-06-26T17:33:30.995+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.PasswordResetOtpRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:30.997+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.auth.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:30.998+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.dto.request.TicketHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:31.009+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketCommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:31.010+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.tickets.repository.TicketRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:31.011+05:30  INFO 20004 --- [AI-Help-Desk] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.help.desk.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-06-26T17:33:31.012+05:30  INFO 20004 --- [AI-Help-Desk] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
-2026-06-26T17:33:32.044+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 4000 (http)
-2026-06-26T17:33:32.061+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-26T17:33:32.062+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-26T17:33:32.159+05:30  INFO 20004 --- [AI-Help-Desk] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3396 ms
-2026-06-26T17:33:32.414+05:30  INFO 20004 --- [AI-Help-Desk] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-26T17:33:32.481+05:30  INFO 20004 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-26T17:33:33.065+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-26T17:33:33.106+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-26T17:33:33.516+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e41e6ad
-2026-06-26T17:33:33.519+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-26T17:33:33.586+05:30  WARN 20004 --- [AI-Help-Desk] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-26T17:33:33.623+05:30  INFO 20004 --- [AI-Help-Desk] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ai_help_desk]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.42
-	Default catalog/schema: ai_help_desk/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-26T17:33:34.873+05:30  INFO 20004 --- [AI-Help-Desk] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-26T17:33:35.026+05:30  INFO 20004 --- [AI-Help-Desk] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T17:33:35.110+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-26T17:33:36.005+05:30  INFO 20004 --- [AI-Help-Desk] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-06-26T17:33:37.804+05:30  WARN 20004 --- [AI-Help-Desk] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-26T17:33:38.266+05:30 DEBUG 20004 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 62 mappings in 'requestMappingHandlerMapping'
-2026-06-26T17:33:38.318+05:30 DEBUG 20004 --- [AI-Help-Desk] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-06-26T17:33:38.359+05:30 DEBUG 20004 --- [AI-Help-Desk] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-26T17:33:38.450+05:30 DEBUG 20004 --- [AI-Help-Desk] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-26T17:33:39.544+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Using the vector table name: vector_store. Is empty: false
-2026-06-26T17:33:39.586+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : Initializing PGVectorStore schema for table: vector_store in schema: public
-2026-06-26T17:33:39.589+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.a.v.pgvector.PgVectorStore           : vectorTableValidationsEnabled false
-2026-06-26T17:33:40.136+05:30  INFO 20004 --- [AI-Help-Desk] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 4000 (http) with context path '/api/v1/hele-desk'
-2026-06-26T17:33:40.149+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : Started AiHelpDeskApplication in 12.237 seconds (process running for 12.937)
-2026-06-26T17:33:40.153+05:30  INFO 20004 --- [AI-Help-Desk] [main] com.help.desk.AiHelpDeskApplication      : AI Help Desk Application Started
-2026-06-26T17:41:51.577+05:30  INFO 20004 --- [AI-Help-Desk] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-06-26T17:41:51.757+05:30  INFO 20004 --- [AI-Help-Desk] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-06-26T17:41:52.187+05:30  INFO 20004 --- [AI-Help-Desk] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-06-26T17:41:52.235+05:30  INFO 20004 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-06-26T17:41:52.304+05:30  INFO 20004 --- [AI-Help-Desk] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
