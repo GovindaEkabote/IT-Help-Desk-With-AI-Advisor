@@ -66,11 +66,16 @@ public interface KnowledgeBaseRepository extends JpaRepository<KnowledgeModel, L
     long countByStatus(ArticleStatus status);
 
     // Search with category filter
-    @Query("SELECT k FROM KnowledgeModel k WHERE " +
-            "k.status = 'PUBLISHED' AND " +
-            "(:category IS NULL OR k.category = :category) AND " +
-            "(LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR " +
-            "LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%')))")
+    @Query("""
+        SELECT k
+        FROM KnowledgeModel k
+        WHERE k.status = 'PUBLISHED'
+        AND (:category IS NULL OR k.category = :category)   
+        AND (
+        LOWER(k.title) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+        OR LOWER(k.content) LIKE LOWER(CONCAT('%', :searchTerm, '%'))
+        OR LOWER(k.keywords) LIKE LOWER(CONCAT('%', :searchTerm, '%')))
+        """)
     Page<KnowledgeModel> searchByCategoryAndTerm(
             @Param("category") String category,
             @Param("searchTerm") String searchTerm,

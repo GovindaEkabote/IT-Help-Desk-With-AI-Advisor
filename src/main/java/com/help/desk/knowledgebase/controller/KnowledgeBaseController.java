@@ -42,7 +42,7 @@ public class KnowledgeBaseController {
      * Role: SUPPORT, ADMIN
      */
     @PutMapping("/articles/{id}")
-    @PreAuthorize("hasAnyRole('EMPLOYEE','IT_SUPPORT','ADMIN')")
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN')")
     public  ResponseEntity<ArticleResponse> updateArticle(
             @PathVariable Long id,
             @Valid @RequestBody ArticleRequest request
@@ -68,7 +68,7 @@ public class KnowledgeBaseController {
      * Role: SUPPORT, ADMIN
      */
     @PostMapping("/articles/{id}/publish")
-    @PreAuthorize("hasAnyRole('EMPLOYEE','IT_SUPPORT','ADMIN')")
+    @PreAuthorize("hasAnyRole('IT_SUPPORT','ADMIN')")
     public ResponseEntity<ArticleResponse> publishArticle(@PathVariable Long id) {
         ArticleResponse articleResponse = knowledgeBaseService.publishArticle(id);
         return ResponseEntity.ok(articleResponse);
@@ -145,6 +145,7 @@ public class KnowledgeBaseController {
      * Role: SUPPORT, ADMIN
      */
     @GetMapping("/statistics")
+    @PreAuthorize("hasAnyRole('ADMIN','IT_SUPPORT')")
     public ResponseEntity<KnowledgeBaseService.ArticleStatistics> getStatistics() {
         KnowledgeBaseService.ArticleStatistics statistics = knowledgeBaseService.getStatistics();
         return ResponseEntity.ok(statistics);

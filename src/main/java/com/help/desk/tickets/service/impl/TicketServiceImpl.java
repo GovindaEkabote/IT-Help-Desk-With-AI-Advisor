@@ -1,11 +1,14 @@
 package com.help.desk.tickets.service.impl;
 
 
+import com.help.desk.ai.dto.ClassificationResponse;
+import com.help.desk.ai.service.IssueClassifierService;
 import com.help.desk.auth.service.AuthService;
 import com.help.desk.exception.ResourceNotFoundException;
 import com.help.desk.tickets.dto.request.TicketRequest;
 import com.help.desk.tickets.dto.response.TicketResponse;
 import com.help.desk.tickets.dto.response.TicketStatisticsResponse;
+import com.help.desk.tickets.enums.Category;
 import com.help.desk.tickets.enums.Priority;
 import com.help.desk.tickets.enums.Status;
 import com.help.desk.tickets.model.Ticket;
@@ -32,12 +35,13 @@ public class TicketServiceImpl  implements TicketService {
     private TicketRepository ticketRepository;
     private UserRepository userRepository;
     private AuthService authService;
+    private IssueClassifierService classifierService;
 
-
-    public TicketServiceImpl(TicketRepository ticketRepository, UserRepository userRepository,AuthService authService) {
+    public TicketServiceImpl(TicketRepository ticketRepository, UserRepository userRepository,AuthService authService, IssueClassifierService classifierService) {
         this.ticketRepository = ticketRepository;
         this.userRepository = userRepository;
         this.authService = authService;
+        this.classifierService = classifierService;
     }
 
     @Override
@@ -61,6 +65,19 @@ public class TicketServiceImpl  implements TicketService {
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
+        try {
+            ClassificationResponse classification = classifierService.classifyIssue(
+                    request.getTitle(),
+                    request.getDescription()
+            );
+
+            // Set category and priority from AI
+            ticket.setCategory(Category.valueOf(classification.getCategory()));
+            ticket.setPriority(Priority.valueOf(classification.getPriority()));
+        }catch (Exception e){
+            ticket.setCategory(request.getCategory());
+            ticket.setPriority(Priority.valueOf(request.getPriority()));
+        }
 
         Ticket savedTicket = ticketRepository.save(ticket);
 
