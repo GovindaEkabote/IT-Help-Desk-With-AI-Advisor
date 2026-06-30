@@ -782,18 +782,11 @@ tar -czf ai-help-desk-backup.tar.gz \
 - **CPU Usage**: Application CPU utilization
 - **AI Response Time**: Time taken for AI responses
 
-## 🤝 Contributing
-
-Please read `CONTRIBUTING.md` for details on our code of conduct and the process for submitting pull requests.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
 ## 🆘 Support
 
 For support:
 
-- Email: support@aihelpdesk.com
+- Email: govindaekbote7@gmail.com
 - Create an issue in the GitHub repository
-- Check documentation: https://github.com/GovindaEkabote/IT-Help-Desk-With-AI-Advisor
+- Check gitHub Link: https://github.com/GovindaEkabote/IT-Help-Desk-With-AI-Advisor
