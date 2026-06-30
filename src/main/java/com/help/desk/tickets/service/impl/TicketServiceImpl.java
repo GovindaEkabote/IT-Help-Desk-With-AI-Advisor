@@ -17,6 +17,7 @@ import com.help.desk.tickets.service.TicketService;
 import com.help.desk.user.enums.UserRole;
 import com.help.desk.user.model.User;
 import com.help.desk.user.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
@@ -29,7 +30,7 @@ import java.time.temporal.WeekFields;
 import java.util.*;
 
 @Service
-
+@Slf4j
 public class TicketServiceImpl  implements TicketService {
 
     private TicketRepository ticketRepository;
@@ -46,18 +47,17 @@ public class TicketServiceImpl  implements TicketService {
 
     @Override
     public TicketResponse createTicket(TicketRequest request) {
+
         User currentUser = authService.getCurrentUser();
 
         User assignedTo = userRepository.findById(request.getAssignedToId())
-                .orElseThrow(() -> new ResourceNotFoundException("Assigned Not Found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Assigned User Not Found"));
 
-
+        // Build ticket WITHOUT category and priority
         Ticket ticket = Ticket.builder()
                 .ticketNumber(generateTicketNumber())
                 .title(request.getTitle())
                 .description(request.getDescription())
-                .category(request.getCategory())
-                .priority(Priority.valueOf(request.getPriority()))
                 .status(Status.NEW)
                 .source(request.getSource())
                 .createdBy(currentUser)
@@ -65,18 +65,68 @@ public class TicketServiceImpl  implements TicketService {
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
+
         try {
-            ClassificationResponse classification = classifierService.classifyIssue(
-                    request.getTitle(),
-                    request.getDescription()
+
+            // If category or priority is missing, let AI classify it
+            if (request.getCategory() == null || request.getPriority() == null) {
+
+                ClassificationResponse classification =
+                        classifierService.classifyIssue(
+                                request.getTitle(),
+                                request.getDescription());
+
+                log.info("AI Classification Response: {}", classification);
+
+                if (classification != null
+                        && classification.getCategory() != null
+                        && classification.getPriority() != null) {
+
+                    ticket.setCategory(
+                            Category.valueOf(
+                                    classification.getCategory().trim().toUpperCase()
+                            )
+                    );
+
+                    ticket.setPriority(
+                            Priority.valueOf(
+                                    classification.getPriority().trim().toUpperCase()
+                            )
+                    );
+
+                } else {
+
+                    log.warn("AI returned null category or priority. Using default values.");
+
+                    ticket.setCategory(Category.OTHER);
+                    ticket.setPriority(Priority.MEDIUM);
+                }
+
+            } else {
+
+                // Use values provided by the user
+                ticket.setCategory(request.getCategory());
+                ticket.setPriority(
+                        Priority.valueOf(request.getPriority().trim().toUpperCase())
+                );
+            }
+
+        } catch (Exception ex) {
+
+            log.error("AI classification failed", ex);
+
+            // Fallback values
+            ticket.setCategory(
+                    request.getCategory() != null
+                            ? request.getCategory()
+                            : Category.OTHER
             );
 
-            // Set category and priority from AI
-            ticket.setCategory(Category.valueOf(classification.getCategory()));
-            ticket.setPriority(Priority.valueOf(classification.getPriority()));
-        }catch (Exception e){
-            ticket.setCategory(request.getCategory());
-            ticket.setPriority(Priority.valueOf(request.getPriority()));
+            ticket.setPriority(
+                    request.getPriority() != null
+                            ? Priority.valueOf(request.getPriority().trim().toUpperCase())
+                            : Priority.MEDIUM
+            );
         }
 
         Ticket savedTicket = ticketRepository.save(ticket);

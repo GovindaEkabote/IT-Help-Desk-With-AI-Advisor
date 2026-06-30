@@ -22,10 +22,10 @@ public class TicketRequest {
 
     private String description;
 
-    @NotNull(message = "Priority is required")
+
     private String priority;
 
-    @NotNull(message = "Category is required")
+
     private Category category;
 
     private Source source;

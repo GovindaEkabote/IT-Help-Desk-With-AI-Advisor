@@ -32,11 +32,11 @@ public class Ticket {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "category")
     private Category category;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "priority")
     private Priority priority;
 
     @Enumerated(EnumType.STRING)

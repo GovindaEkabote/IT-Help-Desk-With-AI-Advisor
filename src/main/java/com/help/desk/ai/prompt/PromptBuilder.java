@@ -13,7 +13,7 @@ public class PromptBuilder {
     public static final String CLASSIFY_PROMPT =
             "You are an IT support ticket classifier. Classify this issue:\n\n" +
                     "Issue: %s\n\n" +
-                    "Choose ONE category from these: HARDWARE, SOFTWARE, NETWORK, EMAIL, ACCESS_REQUEST, OTHER\n" +
+                    "Choose ONE category from these: HARDWARE, SOFTWARE, NETWORK, EMAIL, ACCESS\n" +
                     "Choose ONE priority from these: LOW, MEDIUM, HIGH, URGENT\n\n" +
                     "Rules:\n" +
                     "- Hardware: physical devices (printer, laptop, monitor, keyboard, mouse)\n" +
