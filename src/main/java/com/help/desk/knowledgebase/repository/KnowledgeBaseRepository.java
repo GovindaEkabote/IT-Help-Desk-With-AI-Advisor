@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
@@ -17,6 +18,7 @@ public interface KnowledgeBaseRepository extends JpaRepository<KnowledgeModel, L
 
     // Find published articles
     Page<KnowledgeModel> findByStatus(ArticleStatus status, Pageable pageable);
+    Optional<List<KnowledgeModel>> findByStatus(ArticleStatus  status);
 
     // Find by category
     Page<KnowledgeModel> findByCategoryAndStatus(String category, ArticleStatus status, Pageable pageable);
@@ -80,5 +82,25 @@ public interface KnowledgeBaseRepository extends JpaRepository<KnowledgeModel, L
             @Param("category") String category,
             @Param("searchTerm") String searchTerm,
             Pageable pageable);
+
+    @Query("SELECT k FROM KnowledgeModel k WHERE k.status = 'PUBLISHED' AND " +
+            "(LOWER(k.title) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.content) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.tags) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.keywords) LIKE LOWER(CONCAT('%', :keyword, '%')))")
+    List<KnowledgeModel> searchPublishedArticles(@Param("keyword") String keyword);
+
+    @Query("SELECT k FROM KnowledgeModel k WHERE k.status = :status AND " +
+            "(LOWER(k.title) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.content) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.tags) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(k.keywords) LIKE LOWER(CONCAT('%', :keyword, '%')))")
+    List<KnowledgeModel> searchByStatusAndKeyword(
+            @Param("status") ArticleStatus status,
+            @Param("keyword") String keyword);
+
+    List<KnowledgeModel> findByCategoryAndStatus(String category, ArticleStatus  status);
+
+
 
 }

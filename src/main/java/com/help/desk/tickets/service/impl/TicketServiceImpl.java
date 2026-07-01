@@ -38,7 +38,11 @@ public class TicketServiceImpl  implements TicketService {
     private AuthService authService;
     private IssueClassifierService classifierService;
 
-    public TicketServiceImpl(TicketRepository ticketRepository, UserRepository userRepository,AuthService authService, IssueClassifierService classifierService) {
+    public TicketServiceImpl(
+            TicketRepository ticketRepository,
+            UserRepository userRepository,
+            AuthService authService,
+            IssueClassifierService classifierService) {
         this.ticketRepository = ticketRepository;
         this.userRepository = userRepository;
         this.authService = authService;

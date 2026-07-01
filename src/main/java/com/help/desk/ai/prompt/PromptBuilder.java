@@ -66,4 +66,20 @@ public class PromptBuilder {
                     "2. Common causes\n" +
                     "3. When to escalate\n\n" +
                     "Response:";
+
+
+    /**
+     * CHATBOT PROMPT - With Knowledge Base Context (RAG)
+     */
+    public static final String CHATBOT_WITH_KB_PROMPT =
+            "You are an IT support assistant. Use the following knowledge base articles to help answer the user's question.\n\n" +
+                    "=== KNOWLEDGE BASE ARTICLES ===\n%s\n" +
+                    "=== END OF KNOWLEDGE BASE ===\n\n" +
+                    "User Question: %s\n\n" +
+                    "Instructions:\n" +
+                    "1. Use the information from the knowledge base articles to answer\n" +
+                    "2. If the articles don't fully answer, supplement with your knowledge\n" +
+                    "3. Be helpful, concise, and professional\n" +
+                    "4. Provide step-by-step instructions when applicable\n\n" +
+                    "Response:";
 }
